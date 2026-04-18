@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Akash Chauhan | Machine Learning Engineer</title>
+  <!-- Google Fonts: Inter + Poppins for modern clean typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* CSS Variables for Light/Dark Mode */
+    :root {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --card-bg: #ffffff;
+      --border-light: #e2e8f0;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+      --transition: all 0.25s ease;
+    }
+
+    body.dark {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+      --card-bg: #1e293b;
+      --border-light: #334155;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.3s, color 0.2s;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Navigation & Theme Toggle */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: var(--bg-primary);
+      backdrop-filter: blur(12px);
+      background-color: rgba(var(--bg-primary-rgb), 0.8);
+      z-index: 100;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .theme-toggle {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-light);
+      border-radius: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .theme-toggle i {
+      font-size: 1rem;
+    }
+
+    .theme-toggle:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: rgba(59,130,246,0.1);
+      color: var(--accent);
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent) 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-highlight {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 550px;
+      margin: 1.5rem 0;
+    }
+
+    .hero-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-img-placeholder {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(145deg, #3b82f620, #8b5cf620);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      border: 3px solid var(--accent);
+      overflow: hidden;
+      background-color: var(--bg-secondary);
+    }
+
+    .profile-img-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+
+    .skill-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--accent);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-tag {
+      background: var(--bg-secondary);
+      padding: 0.3rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: var(--transition);
+    }
+
+    .skill-tag:hover {
+      background: var(--accent);
+      color: white;
+    }
+
+    /* Project Cards */
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 1.25rem;
+      padding: 1.8rem;
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-tech {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    /* Learning section chips */
+    .learning-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .learning-chip {
+      background: var(--bg-secondary);
+      padding: 0.6rem 1.5rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-left: 3px solid var(--accent);
+      transition: var(--transition);
+    }
+
+    .learning-chip i {
+      margin-right: 8px;
+      color: var(--accent);
+    }
+
+    /* Contact Section */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .contact-card i {
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .contact-card:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .contact-card:hover i {
+      color: white;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Animations */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-grid {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-highlight {
+        font-size: 1.2rem;
+      }
+      .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .section-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .section-title {
+        display: block;
+        text-align: center;
+      }
+      .contact-links {
+        justify-content: center;
+      }
+      .profile-img-placeholder {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    button, a {
+      cursor: pointer;
+    }
+
+    .btn-resume {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.7rem 1.8rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      margin-top: 0.5rem;
+      border: none;
+    }
+
+    .btn-resume:hover {
+      background: var(--accent-hover);
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-content">
+      <span class="logo">Akash Chauhan</span>
+      <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle Light/Dark Mode">
+        <i class="fas fa-moon"></i> <span id="themeText">Dark</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content animate-on-scroll">
+          <div class="hero-badge">Machine Learning Enthusiast 🔥</div>
+          <h1>Machine Learning Engineer<br>Working on ML & NLP</h1>
+          <div class="hero-highlight">NLP & Deep Learning Focused</div>
+          <p class="hero-desc">
+            Passionate about turning data into intelligent systems. I thrive on solving real-world problems with Machine Learning, 
+            NLP, and deep learning — delivering impactful AI solutions.
+          </p>
+          <a href="#contact" class="btn-resume">Connect with me <i class="fas fa-arrow-right"></i></a>
+        </div>
+            <div class="hero-image animate-on-scroll">
+        <div class="profile-img-placeholder">
+                <img src="image.png" alt="Akash Chauhan Profile" id="profileImage" style="object-fit: cover;">
+</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">About Me</h2>
+        <div class="animate-on-scroll" style="max-width: 780px;">
+          <p style="font-size: 1.2rem; line-height: 1.6; color: var(--text-secondary);">
+            I am passionate about building real-world AI solutions using Machine Learning and NLP. Currently exploring deep learning 
+            and working on practical projects to strengthen my skills. With a strong foundation in Python, data analysis, and predictive modeling, 
+            I aim to craft intelligent systems that solve meaningful challenges. Always eager to learn and collaborate!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Technical Arsenal</h2>
+        <div class="skills-grid">
+          <div class="skill-card animate-on-scroll">
+            <h3><i class="fab fa-python"></i> Programming</h3>
+            <div class="skill-list">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Pandas</span>
+            </div>
+          </div>
+          <div class="skill-card animate-on-scroll">
+            <h3><i class="fas fa-chart-line"></i> Machine Learning</h3>
+            <div class="skill-list">
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">EDA</span>
+              <span class="skill-tag">Regression</span>
+              <span class="skill-tag">Feature Engineering</span>
+            </div>
+          </div>
+          <div class="skill-card animate-on-scroll">
+            <h3><i class="fas fa-brain"></i> Deep Learning</h3>
+            <div class="skill-list">
+              <span class="skill-tag">ANN (Basics)</span>
+              <span class="skill-tag">Neural Networks</span>
+            </div>
+          </div>
+          <div class="skill-card animate-on-scroll">
+            <h3><i class="fas fa-tools"></i> Tools & Workflow</h3>
+            <div class="skill-list">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Jupyter Notebook</span>
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Projects</h2>
+        <div class="project-card animate-on-scroll">
+          <div class="project-title">🍔 Food Delivery Time Prediction</div>
+          <div class="project-tech">Machine Learning · Regression · Feature Engineering</div>
+          <div class="project-desc">
+            Built a robust ML model to predict accurate food delivery times based on distance, traffic patterns, weather, and historical data. 
+            Leveraged feature engineering and regression techniques (Random Forest, XGBoost) to optimize delivery ETA, reducing uncertainty 
+            and improving user experience. Performed extensive EDA to uncover key factors affecting delivery duration.
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+            <span class="skill-tag"><i class="fas fa-chart-simple"></i> Pandas/NumPy</span>
+            <span class="skill-tag"><i class="fas fa-robot"></i> scikit-learn</span>
+          </div>
+        </div>
+        <div class="animate-on-scroll" style="margin-top: 1rem; color: var(--text-muted); font-style: italic;">
+          <i class="fas fa-code-branch"></i> More exciting projects coming soon — stay tuned!
+        </div>
+      </div>
+    </section>
+
+    <!-- Currently Learning -->
+    <section id="learning">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Currently Exploring</h2>
+        <div class="learning-list animate-on-scroll">
+          <div class="learning-chip"><i class="fas fa-language"></i> NLP (Natural Language Processing)</div>
+          <div class="learning-chip"><i class="fas fa-database"></i> RAG (Retrieval-Augmented Generation)</div>
+          <div class="learning-chip"><i class="fas fa-table"></i> SQL</div>
+          <div class="learning-chip"><i class="fas fa-microchip"></i> Advanced Deep Learning</div>
+        </div>
+        <p class="animate-on-scroll" style="margin-top: 1.5rem; color: var(--text-secondary);">
+          🧠 Currently diving into transformer architectures, building RAG pipelines, and mastering database querying to create next-gen AI applications.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Let's Connect</h2>
+        <div class="animate-on-scroll">
+          <p style="margin-bottom: 1.2rem; color: var(--text-secondary);">I'm open to collaborations, ML opportunities, or just a tech chat!</p>
+          <div class="contact-links">
+            <!-- Updated email address -->
+            <a href="mailto:akashwork4413611@gmail.com" class="contact-card" id="emailLink">
+              <i class="fas fa-envelope"></i> <span id="emailText">akashwork4413611@gmail.com</span>
+            </a>
+            <!-- LinkedIn link from provided URL -->
+            <a href="https://www.linkedin.com/in/akash-chauhan-a79605397/" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <!-- GitHub link -->
+            <a href="https://github.com/akashchauhan441" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <!-- Added Kaggle Profile Link -->
+            <a href="https://www.kaggle.com/akashchauhan4413611" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <i class="fab fa-kaggle"></i> Kaggle
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Akash Chauhan — Machine Learning Engineer. Built with <i class="fas fa-heart" style="color: #3b82f6;"></i> using modern web tools.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ======================
+    // DARK / LIGHT MODE TOGGLE
+    // ======================
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeTextSpan = document.getElementById('themeText');
+    const body = document.body;
+
+    // Check for saved user preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark');
+      themeTextSpan.innerText = 'Light';
+      themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>';
+    } else {
+      // default light mode (light is default, but we set class if needed)
+      body.classList.remove('dark');
+      themeTextSpan.innerText = 'Dark';
+      themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>';
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      if (body.classList.contains('dark')) {
+        body.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>';
+      } else {
+        body.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>';
+      }
+    });
+
+    // ======================
+    // SMOOTH SCROLLING (for anchor links if any)
+    // ======================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId === "#" || targetId === "") return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          e.preventDefault();
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ======================
+    // INTERSECTION OBSERVER (fade-in animations)
+    // ======================
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+
+    animatedElements.forEach(el => observer.observe(el));
+
+    // ======================
+    // Profile image handling - user can replace via double-click
+    // ======================
+    const profileImg = document.getElementById('profileImage');
+    if (profileImg) {
+      profileImg.addEventListener('dblclick', () => {
+        const newImgUrl = prompt("Enter URL for your profile image:", profileImg.src);
+        if (newImgUrl && newImgUrl.trim() !== "") {
+          profileImg.src = newImgUrl;
+        }
+      });
+      profileImg.title = "Double-click to change image URL";
+    }
+
+    // Email double-click edit functionality preserved but email updated already
+    const emailAnchor = document.getElementById('emailLink');
+    const emailSpan = document.getElementById('emailText');
+    if (emailAnchor) {
+      emailAnchor.addEventListener('dblclick', (e) => {
+        e.preventDefault();
+        const newEmail = prompt("Enter your email address:", emailSpan.innerText);
+        if (newEmail && newEmail.includes('@')) {
+          emailSpan.innerText = newEmail;
+          emailAnchor.href = `mailto:${newEmail}`;
+        } else if (newEmail) {
+          alert("Please enter a valid email address.");
+        }
+      });
+      emailAnchor.title = "Double-click to update email address";
+    }
+
+    // Add tooltip style for consistency
+    const tooltipStyle = document.createElement('style');
+    tooltipStyle.textContent = `#profileImage, #emailLink { cursor: pointer; transition: opacity 0.2s; } #profileImage:hover, #emailLink:hover { opacity: 0.9; }`;
+    document.head.appendChild(tooltipStyle);
+    
+    console.log("✅ Portfolio updated: Email changed, Kaggle link added, Tools section includes VS Code, Git, MySQL, Role title updated to 'Machine Learning Engineer | Working on ML & NLP'");
+  </script>
+</body>
+</html>

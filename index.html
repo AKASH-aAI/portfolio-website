@@ -279,7 +279,7 @@
       padding: 1.8rem;
       border: 1px solid var(--border-light);
       transition: var(--transition);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       box-shadow: var(--shadow-sm);
     }
 
@@ -303,7 +303,47 @@
 
     .project-desc {
       color: var(--text-secondary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-secondary);
+      padding: 0.5rem 1.2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+
+    .github-link i {
+      font-size: 1.1rem;
+      color: var(--accent);
+      transition: var(--transition);
+    }
+
+    .github-link:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .github-link:hover i {
+      color: white;
     }
 
     /* Learning section chips */
@@ -422,6 +462,9 @@
         width: 220px;
         height: 220px;
       }
+      .project-links {
+        justify-content: flex-start;
+      }
     }
 
     button, a {
@@ -444,6 +487,13 @@
     .btn-resume:hover {
       background: var(--accent-hover);
       transform: scale(1.02);
+    }
+
+    /* extra spacing for projects section */
+    .projects-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
   </style>
 </head>
@@ -520,6 +570,7 @@
             <div class="skill-list">
               <span class="skill-tag">ANN (Basics)</span>
               <span class="skill-tag">Neural Networks</span>
+              <span class="skill-tag">Transformers</span>
             </div>
           </div>
           <div class="skill-card animate-on-scroll">
@@ -539,18 +590,49 @@
     <section id="projects">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Projects</h2>
-        <div class="project-card animate-on-scroll">
-          <div class="project-title">🍔 Food Delivery Time Prediction</div>
-          <div class="project-tech">Machine Learning · Regression · Feature Engineering</div>
-          <div class="project-desc">
-            Built a robust ML model to predict accurate food delivery times based on distance, traffic patterns, weather, and historical data. 
-            Leveraged feature engineering and regression techniques (Random Forest, XGBoost) to optimize delivery ETA, reducing uncertainty 
-            and improving user experience. Performed extensive EDA to uncover key factors affecting delivery duration.
+        <div class="projects-container">
+          <!-- Project 1: Food Delivery Time Prediction with GitHub link -->
+          <div class="project-card animate-on-scroll">
+            <div class="project-title">🍔 Food Delivery Time Prediction</div>
+            <div class="project-tech">Machine Learning · Regression · Feature Engineering</div>
+            <div class="project-desc">
+              Built a robust ML model to predict accurate food delivery times based on distance, traffic patterns, weather, and historical data. 
+              Leveraged feature engineering and regression techniques (Random Forest, XGBoost) to optimize delivery ETA, reducing uncertainty 
+              and improving user experience. Performed extensive EDA to uncover key factors affecting delivery duration.
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
+              <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+              <span class="skill-tag"><i class="fas fa-chart-simple"></i> Pandas/NumPy</span>
+              <span class="skill-tag"><i class="fas fa-robot"></i> scikit-learn</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AKASH-aAI/food-delivery-ml" target="_blank" rel="noopener noreferrer" class="github-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
           </div>
-          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-            <span class="skill-tag"><i class="fas fa-chart-simple"></i> Pandas/NumPy</span>
-            <span class="skill-tag"><i class="fas fa-robot"></i> scikit-learn</span>
+
+          <!-- Project 2: Emotion Detection (Sentiment Analysis) with GitHub link -->
+          <div class="project-card animate-on-scroll">
+            <div class="project-title">😊 Emotion Detection (Sentiment Analysis)</div>
+            <div class="project-tech">NLP · Deep Learning · Transformers</div>
+            <div class="project-desc">
+              Developed an advanced emotion recognition system that classifies text into multiple emotion categories (joy, sadness, anger, fear, love, surprise). 
+              Implemented using state-of-the-art NLP techniques including fine-tuned transformer models (DistilBERT/RoBERTa) and LSTM networks. 
+              Achieved high accuracy on benchmark datasets and built an intuitive interface to analyze real-time sentiment from social media and user feedback. 
+              This project demonstrates deep understanding of tokenization, attention mechanisms, and deployment of NLP pipelines.
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
+              <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
+              <span class="skill-tag"><i class="fas fa-brain"></i> Transformers</span>
+              <span class="skill-tag"><i class="fas fa-smile"></i> Sentiment Analysis</span>
+              <span class="skill-tag"><i class="fas fa-database"></i> Hugging Face</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/AKASH-aAI/emotion-detection-nlp" target="_blank" rel="noopener noreferrer" class="github-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
           </div>
         </div>
         <div class="animate-on-scroll" style="margin-top: 1rem; color: var(--text-muted); font-style: italic;">
@@ -709,7 +791,7 @@
     tooltipStyle.textContent = `#profileImage, #emailLink { cursor: pointer; transition: opacity 0.2s; } #profileImage:hover, #emailLink:hover { opacity: 0.9; }`;
     document.head.appendChild(tooltipStyle);
     
-    console.log("✅ Portfolio updated: Email changed, Kaggle link added, Tools section includes VS Code, Git, MySQL, Role title updated to 'Machine Learning Engineer | Working on ML & NLP'");
+    console.log("✅ Portfolio updated: Added GitHub links for both projects, new Emotion Detection project, and maintained clean design.");
   </script>
 </body>
 </html>

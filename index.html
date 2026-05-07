@@ -29,6 +29,7 @@
       --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
       --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
       --transition: all 0.25s ease;
+      --gradient-fitness: linear-gradient(135deg, #3b82f6, #8b5cf6);
     }
 
     body.dark {
@@ -281,6 +282,7 @@
       transition: var(--transition);
       margin-bottom: 2rem;
       box-shadow: var(--shadow-sm);
+      position: relative;
     }
 
     .project-card:hover {
@@ -288,10 +290,41 @@
       box-shadow: var(--shadow-md);
     }
 
+    /* Featured project special styling */
+    .project-card.featured {
+      border-left: 5px solid transparent;
+      border-image: var(--gradient-fitness);
+      border-image-slice: 1;
+      background: var(--card-bg);
+      box-shadow: 0 20px 35px -12px rgba(59,130,246,0.15);
+    }
+    body.dark .project-card.featured {
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+    }
+    .featured-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.3rem 1rem;
+      border-radius: 2rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 2;
+      backdrop-filter: blur(4px);
+    }
+
     .project-title {
       font-size: 1.6rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
     }
 
     .project-tech {
@@ -314,7 +347,7 @@
       margin-top: 0.5rem;
     }
 
-    .github-link {
+    .github-link, .live-demo-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -329,20 +362,20 @@
       transition: var(--transition);
     }
 
-    .github-link i {
+    .github-link i, .live-demo-link i {
       font-size: 1.1rem;
       color: var(--accent);
       transition: var(--transition);
     }
 
-    .github-link:hover {
+    .github-link:hover, .live-demo-link:hover {
       background: var(--accent);
       color: white;
       border-color: var(--accent);
       transform: translateY(-2px);
     }
 
-    .github-link:hover i {
+    .github-link:hover i, .live-demo-link:hover i {
       color: white;
     }
 
@@ -465,6 +498,14 @@
       .project-links {
         justify-content: flex-start;
       }
+      .featured-badge {
+        top: -10px;
+        right: 12px;
+        font-size: 0.7rem;
+      }
+      .project-title {
+        font-size: 1.3rem;
+      }
     }
 
     button, a {
@@ -494,6 +535,18 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
+    }
+
+    /* Fitness gradient accent for featured */
+    .accent-glow {
+      background: var(--gradient-fitness);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .skill-tag.fit-tag {
+      background: rgba(139,92,246,0.15);
+      font-weight: 500;
     }
   </style>
 </head>
@@ -591,7 +644,38 @@
       <div class="container">
         <h2 class="section-title animate-on-scroll">Projects</h2>
         <div class="projects-container">
-          <!-- NEW PROJECT CARD: Credit Card Fraud Detection (placed at the TOP) -->
+          <!-- NEW FEATURED PROJECT: AI Gym Workout Recommender (top priority) -->
+          <div class="project-card featured animate-on-scroll">
+            <div class="featured-badge"><i class="fas fa-star" style="margin-right: 4px;"></i> Featured Project</div>
+            <div class="project-title">
+              AI Gym Workout Recommender 💪🤖
+              <span style="font-size: 0.9rem; background: rgba(59,130,246,0.15); padding: 0.2rem 0.7rem; border-radius: 2rem;">AI + ML</span>
+            </div>
+            <div class="project-tech">Flask · Scikit-learn · Random Forest · Pandas · NumPy · Render</div>
+            <div class="project-desc">
+              An AI-powered fitness web application that generates personalized workout recommendations using Machine Learning based on a user's age, weight, height, fitness goal, and experience level. Features a Random Forest ML model, interactive workout timers with pause/resume, exercise images, sound effects, and modern responsive UI — all integrated with Flask backend.
+              <br><br>
+              <em><i class="fas fa-code-branch"></i> AI-assisted development note: AI tools helped with repetitive/frontend/boilerplate tasks, while the full ML workflow, backend integration, deployment, feature planning, and architecture were handled by me.</em>
+            </div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
+              <span class="skill-tag fit-tag"><i class="fab fa-python"></i> Python</span>
+              <span class="skill-tag fit-tag"><i class="fas fa-flask"></i> Flask</span>
+              <span class="skill-tag fit-tag"><i class="fas fa-robot"></i> Random Forest</span>
+              <span class="skill-tag fit-tag"><i class="fas fa-chart-simple"></i> Pandas/NumPy</span>
+              <span class="skill-tag fit-tag"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="skill-tag fit-tag"><i class="fas fa-cloud"></i> Render</span>
+            </div>
+            <div class="project-links">
+              <a href="https://ai-powered-gym-trainer-2.onrender.com" target="_blank" rel="noopener noreferrer" class="live-demo-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="github-link">
+                <i class="fab fa-github"></i> GitHub (Coming Soon)
+              </a>
+            </div>
+          </div>
+
+          <!-- EXISTING PROJECT: Credit Card Fraud Detection -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">💳 Credit Card Fraud Detection</div>
             <div class="project-tech">Machine Learning · Imbalanced Data · SHAP Analysis</div>
@@ -614,7 +698,7 @@
             </div>
           </div>
 
-          <!-- Project 1: Food Delivery Time Prediction with GitHub link -->
+          <!-- Project 1: Food Delivery Time Prediction -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">🍔 Food Delivery Time Prediction</div>
             <div class="project-tech">Machine Learning · Regression · Feature Engineering</div>
@@ -635,7 +719,7 @@
             </div>
           </div>
 
-          <!-- Project 2: Emotion Detection (Sentiment Analysis) with GitHub link -->
+          <!-- Project 2: Emotion Detection (Sentiment Analysis) -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">😊 Emotion Detection (Sentiment Analysis)</div>
             <div class="project-tech">NLP · Deep Learning · Transformers</div>
@@ -687,19 +771,15 @@
         <div class="animate-on-scroll">
           <p style="margin-bottom: 1.2rem; color: var(--text-secondary);">I'm open to collaborations, ML opportunities, or just a tech chat!</p>
           <div class="contact-links">
-            <!-- Updated email address -->
             <a href="mailto:akashwork4413611@gmail.com" class="contact-card" id="emailLink">
               <i class="fas fa-envelope"></i> <span id="emailText">akashwork4413611@gmail.com</span>
             </a>
-            <!-- LinkedIn link from provided URL -->
             <a href="https://www.linkedin.com/in/akash-chauhan-a79605397/" target="_blank" rel="noopener noreferrer" class="contact-card">
               <i class="fab fa-linkedin"></i> LinkedIn
             </a>
-            <!-- GitHub link -->
             <a href="https://github.com/akashchauhan441" target="_blank" rel="noopener noreferrer" class="contact-card">
               <i class="fab fa-github"></i> GitHub
             </a>
-            <!-- Added Kaggle Profile Link -->
             <a href="https://www.kaggle.com/akashchauhan4413611" target="_blank" rel="noopener noreferrer" class="contact-card">
               <i class="fab fa-kaggle"></i> Kaggle
             </a>
@@ -723,14 +803,12 @@
     const themeTextSpan = document.getElementById('themeText');
     const body = document.body;
 
-    // Check for saved user preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       body.classList.add('dark');
       themeTextSpan.innerText = 'Light';
       themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>';
     } else {
-      // default light mode (light is default, but we set class if needed)
       body.classList.remove('dark');
       themeTextSpan.innerText = 'Dark';
       themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>';
@@ -748,9 +826,7 @@
       }
     });
 
-    // ======================
-    // SMOOTH SCROLLING (for anchor links if any)
-    // ======================
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -763,9 +839,7 @@
       });
     });
 
-    // ======================
-    // INTERSECTION OBSERVER (fade-in animations)
-    // ======================
+    // Intersection Observer for animations
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -778,9 +852,7 @@
 
     animatedElements.forEach(el => observer.observe(el));
 
-    // ======================
-    // Profile image handling - user can replace via double-click
-    // ======================
+    // Profile image handler
     const profileImg = document.getElementById('profileImage');
     if (profileImg) {
       profileImg.addEventListener('dblclick', () => {
@@ -792,7 +864,7 @@
       profileImg.title = "Double-click to change image URL";
     }
 
-    // Email double-click edit functionality preserved but email updated already
+    // Email double-click edit
     const emailAnchor = document.getElementById('emailLink');
     const emailSpan = document.getElementById('emailText');
     if (emailAnchor) {
@@ -809,12 +881,11 @@
       emailAnchor.title = "Double-click to update email address";
     }
 
-    // Add tooltip style for consistency
     const tooltipStyle = document.createElement('style');
     tooltipStyle.textContent = `#profileImage, #emailLink { cursor: pointer; transition: opacity 0.2s; } #profileImage:hover, #emailLink:hover { opacity: 0.9; }`;
     document.head.appendChild(tooltipStyle);
     
-    console.log("✅ Portfolio updated: Added Credit Card Fraud Detection project at top with GitHub link, existing projects preserved.");
+    console.log("✅ Portfolio updated: New AI Gym Workout Recommender project added as featured at the top.");
   </script>
 </body>
 </html>

@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Akash Chauhan | Machine Learning Engineer</title>
-  <!-- Google Fonts: Inter + Poppins for modern clean typography -->
+  <!-- Google Fonts: Inter + Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome 6 (free icons) -->
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -100,10 +100,6 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-    }
-
-    .theme-toggle i {
-      font-size: 1rem;
     }
 
     .theme-toggle:hover {
@@ -220,11 +216,11 @@
       object-fit: cover;
     }
 
-    /* Skills Grid */
+    /* Skills Grid - modernized */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
       margin-top: 1rem;
     }
 
@@ -244,7 +240,7 @@
     }
 
     .skill-card h3 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
@@ -290,7 +286,6 @@
       box-shadow: var(--shadow-md);
     }
 
-    /* Featured project special styling */
     .project-card.featured {
       border-left: 5px solid transparent;
       border-image: var(--gradient-fitness);
@@ -312,7 +307,6 @@
       padding: 0.3rem 1rem;
       border-radius: 2rem;
       letter-spacing: 0.5px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       z-index: 2;
       backdrop-filter: blur(4px);
     }
@@ -337,6 +331,7 @@
     .project-desc {
       color: var(--text-secondary);
       margin-bottom: 1.2rem;
+      line-height: 1.6;
     }
 
     .project-links {
@@ -379,29 +374,6 @@
       color: white;
     }
 
-    /* Learning section chips */
-    .learning-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .learning-chip {
-      background: var(--bg-secondary);
-      padding: 0.6rem 1.5rem;
-      border-radius: 3rem;
-      font-weight: 600;
-      font-size: 1rem;
-      border-left: 3px solid var(--accent);
-      transition: var(--transition);
-    }
-
-    .learning-chip i {
-      margin-right: 8px;
-      color: var(--accent);
-    }
-
     /* Contact Section */
     .contact-links {
       display: flex;
@@ -439,7 +411,6 @@
       color: white;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 2rem 0;
@@ -495,21 +466,14 @@
         width: 220px;
         height: 220px;
       }
-      .project-links {
-        justify-content: flex-start;
+      .project-title {
+        font-size: 1.3rem;
       }
       .featured-badge {
         top: -10px;
         right: 12px;
         font-size: 0.7rem;
       }
-      .project-title {
-        font-size: 1.3rem;
-      }
-    }
-
-    button, a {
-      cursor: pointer;
     }
 
     .btn-resume {
@@ -529,25 +493,6 @@
       background: var(--accent-hover);
       transform: scale(1.02);
     }
-
-    /* extra spacing for projects section */
-    .projects-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    /* Fitness gradient accent for featured */
-    .accent-glow {
-      background: var(--gradient-fitness);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .skill-tag.fit-tag {
-      background: rgba(139,92,246,0.15);
-      font-weight: 500;
-    }
   </style>
 </head>
 <body>
@@ -565,7 +510,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content animate-on-scroll">
-          <div class="hero-badge">Machine Learning Enthusiast 🔥</div>
+          <div class="hero-badge">Machine Learning Engineer 🔥</div>
           <h1>Machine Learning Engineer<br>Working on ML & NLP</h1>
           <div class="hero-highlight">NLP & Deep Learning Focused</div>
           <p class="hero-desc">
@@ -574,10 +519,10 @@
           </p>
           <a href="#contact" class="btn-resume">Connect with me <i class="fas fa-arrow-right"></i></a>
         </div>
-            <div class="hero-image animate-on-scroll">
-        <div class="profile-img-placeholder">
-                <img src="image.png" alt="Akash Chauhan Profile" id="profileImage" style="object-fit: cover;">
-</div>
+        <div class="hero-image animate-on-scroll">
+          <div class="profile-img-placeholder">
+            <img src="image.png" alt="Akash Chauhan Profile" id="profileImage" style="object-fit: cover;">
+          </div>
         </div>
       </div>
     </section>
@@ -588,25 +533,26 @@
         <h2 class="section-title animate-on-scroll">About Me</h2>
         <div class="animate-on-scroll" style="max-width: 780px;">
           <p style="font-size: 1.2rem; line-height: 1.6; color: var(--text-secondary);">
-            I am passionate about building real-world AI solutions using Machine Learning and NLP. Currently exploring deep learning 
-            and working on practical projects to strengthen my skills. With a strong foundation in Python, data analysis, and predictive modeling, 
-            I aim to craft intelligent systems that solve meaningful challenges. Always eager to learn and collaborate!
+            I'm an ML Engineer focused on building practical AI solutions using Machine Learning, NLP, and deep learning. 
+            Currently exploring retrieval-augmented generation, transformer architectures, and advanced model deployment. 
+            I believe in writing clean, reproducible code and shipping real-world projects that solve actual problems.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section - Updated: Title and content aligned with GitHub profile -->
     <section id="skills">
       <div class="container">
-        <h2 class="section-title animate-on-scroll">Technical Arsenal</h2>
+        <h2 class="section-title animate-on-scroll">Skills & Technologies</h2>
         <div class="skills-grid">
           <div class="skill-card animate-on-scroll">
-            <h3><i class="fab fa-python"></i> Programming</h3>
+            <h3><i class="fab fa-python"></i> Programming & Data</h3>
             <div class="skill-list">
               <span class="skill-tag">Python</span>
               <span class="skill-tag">NumPy</span>
               <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">SQL</span>
             </div>
           </div>
           <div class="skill-card animate-on-scroll">
@@ -614,153 +560,137 @@
             <div class="skill-list">
               <span class="skill-tag">Scikit-learn</span>
               <span class="skill-tag">EDA</span>
-              <span class="skill-tag">Regression</span>
               <span class="skill-tag">Feature Engineering</span>
+              <span class="skill-tag">Regression Models</span>
+              <span class="skill-tag">Classification Models</span>
             </div>
           </div>
           <div class="skill-card animate-on-scroll">
-            <h3><i class="fas fa-brain"></i> Deep Learning</h3>
+            <h3><i class="fas fa-brain"></i> Deep Learning & NLP</h3>
             <div class="skill-list">
-              <span class="skill-tag">ANN (Basics)</span>
+              <span class="skill-tag">PyTorch</span>
               <span class="skill-tag">Neural Networks</span>
+              <span class="skill-tag">NLP</span>
               <span class="skill-tag">Transformers</span>
+              <span class="skill-tag">Sentiment Analysis</span>
             </div>
           </div>
           <div class="skill-card animate-on-scroll">
-            <h3><i class="fas fa-tools"></i> Tools & Workflow</h3>
+            <h3><i class="fas fa-tools"></i> Tools & Development</h3>
             <div class="skill-list">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">Jupyter Notebook</span>
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">Git & GitHub</span>
               <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Jupyter Notebook</span>
+              <span class="skill-tag">Render</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section - UPDATED with accurate links and refined descriptions -->
     <section id="projects">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Projects</h2>
         <div class="projects-container">
-          <!-- NEW FEATURED PROJECT: AI Gym Workout Recommender (top priority) -->
+          <!-- FEATURED PROJECT: AI Gym Workout Recommender - with both buttons and refined description -->
           <div class="project-card featured animate-on-scroll">
-            <div class="featured-badge"><i class="fas fa-star" style="margin-right: 4px;"></i> Featured Project</div>
+            <div class="featured-badge"><i class="fas fa-star"></i> Featured Project</div>
             <div class="project-title">
-              AI Gym Workout Recommender 💪🤖
-              <span style="font-size: 0.9rem; background: rgba(59,130,246,0.15); padding: 0.2rem 0.7rem; border-radius: 2rem;">AI + ML</span>
+              AI Gym Workout Recommender 🤖💪
             </div>
-            <div class="project-tech">Flask · Scikit-learn · Random Forest · Pandas · NumPy · Render</div>
+            <div class="project-tech">Flask · Scikit-learn · Random Forest · Pandas · Render · JavaScript</div>
             <div class="project-desc">
-              An AI-powered fitness web application that generates personalized workout recommendations using Machine Learning based on a user's age, weight, height, fitness goal, and experience level. Features a Random Forest ML model, interactive workout timers with pause/resume, exercise images, sound effects, and modern responsive UI — all integrated with Flask backend.
+              A full-stack AI web application that delivers personalized workout plans using a Random Forest model. 
+              Users input age, weight, fitness goals, and experience — the system recommends tailored exercises, complete with interactive timers, exercise visuals, and sound cues. 
+              Built with Flask backend, responsive frontend, and deployed on Render. 
               <br><br>
-              <em><i class="fas fa-code-branch"></i> AI-assisted development note: AI tools helped with repetitive/frontend/boilerplate tasks, while the full ML workflow, backend integration, deployment, feature planning, and architecture were handled by me.</em>
+              <i class="fas fa-code-branch"></i> <strong>Development journey:</strong> Around 80% of the codebase was developed using AI-assisted tools to speed up development, while the project idea, machine learning workflow, backend integration, deployment, customization, and overall implementation decisions were handled by me. I believe the future of development is not just about writing code manually, but about solving real-world problems efficiently by combining technical understanding with modern AI tools.
             </div>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag fit-tag"><i class="fab fa-python"></i> Python</span>
-              <span class="skill-tag fit-tag"><i class="fas fa-flask"></i> Flask</span>
-              <span class="skill-tag fit-tag"><i class="fas fa-robot"></i> Random Forest</span>
-              <span class="skill-tag fit-tag"><i class="fas fa-chart-simple"></i> Pandas/NumPy</span>
-              <span class="skill-tag fit-tag"><i class="fab fa-js"></i> JavaScript</span>
-              <span class="skill-tag fit-tag"><i class="fas fa-cloud"></i> Render</span>
+            <div class="project-tech-tagset" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">Random Forest</span>
+              <span class="skill-tag">Pandas/NumPy</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Render</span>
             </div>
             <div class="project-links">
               <a href="https://ai-powered-gym-trainer-2.onrender.com" target="_blank" rel="noopener noreferrer" class="live-demo-link">
                 <i class="fas fa-external-link-alt"></i> Live Demo
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> GitHub (Coming Soon)
+              <a href="https://github.com/AKASH-aAI/ai-powered-gym-trainer" target="_blank" rel="noopener noreferrer" class="github-link">
+                <i class="fab fa-github"></i> GitHub
               </a>
             </div>
           </div>
 
-          <!-- EXISTING PROJECT: Credit Card Fraud Detection -->
+          <!-- Credit Card Fraud Detection - refined, concise -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">💳 Credit Card Fraud Detection</div>
-            <div class="project-tech">Machine Learning · Imbalanced Data · SHAP Analysis</div>
+            <div class="project-tech">Scikit-learn · SHAP · Imbalanced Learning</div>
             <div class="project-desc">
-              Built an end-to-end machine learning project to detect fraudulent credit card transactions using imbalanced data.
-              Focused on maximizing recall while maintaining high precision.
-              Performed EDA, model training, evaluation, and SHAP-based analysis to generate business insights.
+              End-to-end ML pipeline to detect fraudulent transactions with highly imbalanced data. Leveraged SMOTE, ensemble classifiers, and SHAP for model interpretability, achieving strong recall while maintaining precision.
             </div>
             <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-              <span class="skill-tag"><i class="fas fa-chart-simple"></i> Pandas/NumPy</span>
-              <span class="skill-tag"><i class="fas fa-robot"></i> Scikit-learn</span>
-              <span class="skill-tag"><i class="fas fa-chart-line"></i> SHAP</span>
-              <span class="skill-tag"><i class="fas fa-chart-pie"></i> Matplotlib</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">SHAP</span>
+              <span class="skill-tag">Matplotlib</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/AKASH-aAI/credit-card-fraud-detection" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> View on GitHub
+                <i class="fab fa-github"></i> GitHub
               </a>
             </div>
           </div>
 
-          <!-- Project 1: Food Delivery Time Prediction -->
+          <!-- Food Delivery Time Prediction - clean and professional -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">🍔 Food Delivery Time Prediction</div>
-            <div class="project-tech">Machine Learning · Regression · Feature Engineering</div>
+            <div class="project-tech">Regression · Feature Engineering · XGBoost</div>
             <div class="project-desc">
-              Built a robust ML model to predict accurate food delivery times based on distance, traffic patterns, weather, and historical data. 
-              Leveraged feature engineering and regression techniques (Random Forest, XGBoost) to optimize delivery ETA, reducing uncertainty 
-              and improving user experience. Performed extensive EDA to uncover key factors affecting delivery duration.
+              Built a robust ML model to estimate delivery ETA based on distance, traffic, and weather. Extensive EDA and feature engineering led to improved accuracy, helping reduce delivery uncertainty.
             </div>
             <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-              <span class="skill-tag"><i class="fas fa-chart-simple"></i> Pandas/NumPy</span>
-              <span class="skill-tag"><i class="fas fa-robot"></i> scikit-learn</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Pandas/NumPy</span>
+              <span class="skill-tag">Scikit-learn</span>
+              <span class="skill-tag">XGBoost</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/AKASH-aAI/food-delivery-ml" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> View on GitHub
+                <i class="fab fa-github"></i> GitHub
               </a>
             </div>
           </div>
 
-          <!-- Project 2: Emotion Detection (Sentiment Analysis) -->
+          <!-- Emotion Detection (Sentiment Analysis) - sharper NLP focus -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">😊 Emotion Detection (Sentiment Analysis)</div>
-            <div class="project-tech">NLP · Deep Learning · Transformers</div>
+            <div class="project-tech">Transformers · DistilBERT · Hugging Face</div>
             <div class="project-desc">
-              Developed an advanced emotion recognition system that classifies text into multiple emotion categories (joy, sadness, anger, fear, love, surprise). 
-              Implemented using state-of-the-art NLP techniques including fine-tuned transformer models (DistilBERT/RoBERTa) and LSTM networks. 
-              Achieved high accuracy on benchmark datasets and built an intuitive interface to analyze real-time sentiment from social media and user feedback. 
-              This project demonstrates deep understanding of tokenization, attention mechanisms, and deployment of NLP pipelines.
+              Fine-tuned transformer models (DistilBERT/RoBERTa) for multi-class emotion classification across joy, sadness, anger, and more. Built an intuitive interface to analyze real-time text sentiment, demonstrating advanced NLP pipelines and attention mechanisms.
             </div>
             <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-              <span class="skill-tag"><i class="fas fa-brain"></i> Transformers</span>
-              <span class="skill-tag"><i class="fas fa-smile"></i> Sentiment Analysis</span>
-              <span class="skill-tag"><i class="fas fa-database"></i> Hugging Face</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Transformers</span>
+              <span class="skill-tag">Hugging Face</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">Sentiment Analysis</span>
             </div>
             <div class="project-links">
               <a href="https://github.com/AKASH-aAI/emotion-detection-nlp" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> View on GitHub
+                <i class="fab fa-github"></i> GitHub
               </a>
             </div>
           </div>
         </div>
         <div class="animate-on-scroll" style="margin-top: 1rem; color: var(--text-muted); font-style: italic;">
-          <i class="fas fa-code-branch"></i> More exciting projects coming soon — stay tuned!
+          <i class="fas fa-code-branch"></i> More real-world ML projects shipping soon — follow my GitHub for the latest.
         </div>
-      </div>
-    </section>
-
-    <!-- Currently Learning -->
-    <section id="learning">
-      <div class="container">
-        <h2 class="section-title animate-on-scroll">Currently Exploring</h2>
-        <div class="learning-list animate-on-scroll">
-          <div class="learning-chip"><i class="fas fa-language"></i> NLP (Natural Language Processing)</div>
-          <div class="learning-chip"><i class="fas fa-database"></i> RAG (Retrieval-Augmented Generation)</div>
-          <div class="learning-chip"><i class="fas fa-table"></i> SQL</div>
-          <div class="learning-chip"><i class="fas fa-microchip"></i> Advanced Deep Learning</div>
-        </div>
-        <p class="animate-on-scroll" style="margin-top: 1.5rem; color: var(--text-secondary);">
-          🧠 Currently diving into transformer architectures, building RAG pipelines, and mastering database querying to create next-gen AI applications.
-        </p>
       </div>
     </section>
 
@@ -796,9 +726,7 @@
   </footer>
 
   <script>
-    // ======================
-    // DARK / LIGHT MODE TOGGLE
-    // ======================
+    // Dark/Light Mode Toggle
     const themeToggleBtn = document.getElementById('themeToggleBtn');
     const themeTextSpan = document.getElementById('themeText');
     const body = document.body;
@@ -880,12 +808,6 @@
       });
       emailAnchor.title = "Double-click to update email address";
     }
-
-    const tooltipStyle = document.createElement('style');
-    tooltipStyle.textContent = `#profileImage, #emailLink { cursor: pointer; transition: opacity 0.2s; } #profileImage:hover, #emailLink:hover { opacity: 0.9; }`;
-    document.head.appendChild(tooltipStyle);
-    
-    console.log("✅ Portfolio updated: New AI Gym Workout Recommender project added as featured at the top.");
   </script>
 </body>
 </html>

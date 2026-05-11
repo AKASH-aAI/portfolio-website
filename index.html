@@ -30,6 +30,7 @@
       --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
       --transition: all 0.25s ease;
       --gradient-fitness: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      --gradient-report: linear-gradient(135deg, #0f2c3d, #1b4a6e, #3b82f6);
     }
 
     body.dark {
@@ -293,9 +294,38 @@
       background: var(--card-bg);
       box-shadow: 0 20px 35px -12px rgba(59,130,246,0.15);
     }
-    body.dark .project-card.featured {
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+    
+    .project-card.super-featured {
+      background: linear-gradient(145deg, rgba(59,130,246,0.02), rgba(139,92,246,0.02));
+      border: 1px solid var(--accent);
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 35px -12px rgba(59,130,246,0.25);
+      position: relative;
+      overflow: hidden;
     }
+    
+    body.dark .project-card.super-featured {
+      background: linear-gradient(145deg, rgba(59,130,246,0.05), rgba(139,92,246,0.03));
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+    }
+    
+    .project-card.super-featured::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    
     .featured-badge {
       position: absolute;
       top: -12px;
@@ -309,6 +339,17 @@
       letter-spacing: 0.5px;
       z-index: 2;
       backdrop-filter: blur(4px);
+    }
+    
+    .super-featured-badge {
+      background: linear-gradient(135deg, #f59e0b, #ef4444, #8b5cf6);
+      animation: pulse-badge 2s infinite;
+    }
+    
+    @keyframes pulse-badge {
+      0% { opacity: 0.9; box-shadow: 0 0 0 0 rgba(245,158,11,0.4); }
+      70% { opacity: 1; box-shadow: 0 0 0 8px rgba(245,158,11,0); }
+      100% { opacity: 0.9; box-shadow: 0 0 0 0 rgba(245,158,11,0); }
     }
 
     .project-title {
@@ -339,10 +380,10 @@
       flex-wrap: wrap;
       gap: 1rem;
       align-items: center;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
 
-    .github-link, .live-demo-link {
+    .github-link, .live-demo-link, .sample-report-link {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -357,21 +398,60 @@
       transition: var(--transition);
     }
 
-    .github-link i, .live-demo-link i {
+    .github-link i, .live-demo-link i, .sample-report-link i {
       font-size: 1.1rem;
       color: var(--accent);
       transition: var(--transition);
     }
 
-    .github-link:hover, .live-demo-link:hover {
+    .github-link:hover, .live-demo-link:hover, .sample-report-link:hover {
       background: var(--accent);
       color: white;
       border-color: var(--accent);
       transform: translateY(-2px);
     }
 
-    .github-link:hover i, .live-demo-link:hover i {
+    .github-link:hover i, .live-demo-link:hover i, .sample-report-link:hover i {
       color: white;
+    }
+
+    .password-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(59,130,246,0.12);
+      border: 1px dashed var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.8rem;
+      font-family: monospace;
+    }
+    
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+    
+    .feature-chip {
+      background: var(--bg-secondary);
+      padding: 0.25rem 0.85rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+    }
+    
+    .feature-chip i {
+      color: var(--accent);
+      font-size: 0.7rem;
     }
 
     /* Contact Section */
@@ -541,7 +621,7 @@
       </div>
     </section>
 
-    <!-- Skills Section - Updated: Title and content aligned with GitHub profile -->
+    <!-- Skills Section -->
     <section id="skills">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Skills & Technologies</h2>
@@ -589,12 +669,62 @@
       </div>
     </section>
 
-    <!-- Projects Section - UPDATED with accurate links and refined descriptions -->
+    <!-- Projects Section - NEW FEATURED PROJECT AT TOP -->
     <section id="projects">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Projects</h2>
         <div class="projects-container">
-          <!-- FEATURED PROJECT: AI Gym Workout Recommender - with both buttons and refined description -->
+          
+          <!-- SUPER FEATURED: AI Data Report Generator (Latest Project) -->
+          <div class="project-card super-featured animate-on-scroll" style="margin-bottom: 2.5rem;">
+            <div class="featured-badge super-featured-badge"><i class="fas fa-chart-line"></i> LATEST RELEASE ⚡</div>
+            <div class="project-title">
+              🤖 AI Data Report Generator
+            </div>
+            <div class="project-tech">Python · Flask · Pandas · NumPy · ReportLab · Render · EDA Automation</div>
+            <div class="project-desc">
+              <strong>🚀 Automated EDA & Professional PDF Reporting — from hours to seconds!</strong> Built an AI-powered Flask application that instantly analyzes datasets, detects missing values, duplicates, outliers, and computes statistical summaries with a dataset health score. The system automates the entire exploratory data analysis workflow and generates polished PDF analytics reports, reducing manual reporting time drastically.
+            </div>
+            
+            <div class="feature-list">
+              <span class="feature-chip"><i class="fas fa-chart-pie"></i> Auto EDA</span>
+              <span class="feature-chip"><i class="fas fa-exclamation-triangle"></i> Missing Values</span>
+              <span class="feature-chip"><i class="fas fa-copy"></i> Duplicates</span>
+              <span class="feature-chip"><i class="fas fa-chart-line"></i> Outlier Detection</span>
+              <span class="feature-chip"><i class="fas fa-heartbeat"></i> Health Scoring</span>
+              <span class="feature-chip"><i class="fas fa-file-pdf"></i> PDF Reports</span>
+            </div>
+            
+            <div class="project-tech-tagset" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
+              <span class="skill-tag">Flask</span>
+              <span class="skill-tag">Pandas/NumPy</span>
+              <span class="skill-tag">ReportLab</span>
+              <span class="skill-tag">Statistical Analysis</span>
+              <span class="skill-tag">Render Deployment</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://ai-data-report-generator.onrender.com/" target="_blank" rel="noopener noreferrer" class="live-demo-link">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+              </a>
+              <a href="https://github.com/AKASH-aAI/ai-data-report-generator" target="_blank" rel="noopener noreferrer" class="github-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://drive.google.com/file/d/12ZoFaGHOz_zlCBmTDs-0nhDevX5cetw_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="sample-report-link">
+                <i class="fas fa-file-pdf"></i> Sample Report
+              </a>
+            </div>
+            
+            <div class="password-badge">
+              <i class="fas fa-lock"></i> Demo Access Password: <strong style="letter-spacing: 1px;">AIREPORT2026</strong>
+              <i class="fas fa-key" style="margin-left: 4px;"></i>
+            </div>
+            <div style="margin-top: 0.8rem; font-size: 0.75rem; color: var(--text-muted);">
+              <i class="fas fa-robot"></i> Instant dataset insights & professional PDF generation — upload CSV and get comprehensive analytics report.
+            </div>
+          </div>
+
+          <!-- Featured Project: AI Gym Workout Recommender -->
           <div class="project-card featured animate-on-scroll">
             <div class="featured-badge"><i class="fas fa-star"></i> Featured Project</div>
             <div class="project-title">
@@ -606,7 +736,7 @@
               Users input age, weight, fitness goals, and experience — the system recommends tailored exercises, complete with interactive timers, exercise visuals, and sound cues. 
               Built with Flask backend, responsive frontend, and deployed on Render. 
               <br><br>
-              <i class="fas fa-code-branch"></i> <strong>Development journey:</strong> Around 80% of the codebase was developed using AI-assisted tools to speed up development, while the project idea, machine learning workflow, backend integration, deployment, customization, and overall implementation decisions were handled by me. I believe the future of development is not just about writing code manually, but about solving real-world problems efficiently by combining technical understanding with modern AI tools.
+              <i class="fas fa-code-branch"></i> <strong>Development journey:</strong> Around 80% of the codebase was developed using AI-assisted tools to speed up development, while the project idea, machine learning workflow, backend integration, deployment, customization, and overall implementation decisions were handled by me.
             </div>
             <div class="project-tech-tagset" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
               <span class="skill-tag">Python</span>
@@ -626,7 +756,7 @@
             </div>
           </div>
 
-          <!-- Credit Card Fraud Detection - refined, concise -->
+          <!-- Credit Card Fraud Detection -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">💳 Credit Card Fraud Detection</div>
             <div class="project-tech">Scikit-learn · SHAP · Imbalanced Learning</div>
@@ -647,7 +777,7 @@
             </div>
           </div>
 
-          <!-- Food Delivery Time Prediction - clean and professional -->
+          <!-- Food Delivery Time Prediction -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">🍔 Food Delivery Time Prediction</div>
             <div class="project-tech">Regression · Feature Engineering · XGBoost</div>
@@ -667,7 +797,7 @@
             </div>
           </div>
 
-          <!-- Emotion Detection (Sentiment Analysis) - sharper NLP focus -->
+          <!-- Emotion Detection (Sentiment Analysis) -->
           <div class="project-card animate-on-scroll">
             <div class="project-title">😊 Emotion Detection (Sentiment Analysis)</div>
             <div class="project-tech">Transformers · DistilBERT · Hugging Face</div>

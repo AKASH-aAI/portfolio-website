@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Akash Chauhan | Machine Learning Engineer</title>
+  <title>Akash Chauhan | Data Analytics & Data Science Portfolio</title>
   <!-- Google Fonts: Inter + Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -15,7 +15,7 @@
       box-sizing: border-box;
     }
 
-    /* CSS Variables for Light/Dark Mode */
+    /* CSS Variables for Light/Dark Mode - same colors, enhanced variables */
     :root {
       --bg-primary: #ffffff;
       --bg-secondary: #f8fafc;
@@ -26,11 +26,15 @@
       --border-light: #e2e8f0;
       --accent: #3b82f6;
       --accent-hover: #2563eb;
+      --accent-glow: rgba(59,130,246,0.15);
       --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-      --transition: all 0.25s ease;
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+      --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       --gradient-fitness: linear-gradient(135deg, #3b82f6, #8b5cf6);
       --gradient-report: linear-gradient(135deg, #0f2c3d, #1b4a6e, #3b82f6);
+      --glass-bg: rgba(255, 255, 255, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.2);
     }
 
     body.dark {
@@ -41,8 +45,12 @@
       --text-muted: #94a3b8;
       --card-bg: #1e293b;
       --border-light: #334155;
-      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      --glass-bg: rgba(30, 41, 59, 0.8);
+      --glass-border: rgba(255, 255, 255, 0.05);
+      --accent-glow: rgba(59,130,246,0.2);
     }
 
     body {
@@ -60,13 +68,13 @@
       padding: 0 1.5rem;
     }
 
-    /* Navigation & Theme Toggle */
+    /* Glassmorphism Nav */
     .navbar {
       position: sticky;
       top: 0;
-      background: var(--bg-primary);
+      background: var(--glass-bg);
       backdrop-filter: blur(12px);
-      background-color: rgba(var(--bg-primary-rgb), 0.8);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 100;
       padding: 1rem 0;
       border-bottom: 1px solid var(--border-light);
@@ -79,59 +87,83 @@
     }
 
     .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      font-weight: 800;
+      font-size: 1.6rem;
+      background: var(--gradient-fitness);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       letter-spacing: -0.5px;
+      transition: transform 0.2s ease;
     }
+    .logo:hover { transform: scale(1.02); }
 
     .theme-toggle {
       background: var(--bg-secondary);
       border: 1px solid var(--border-light);
       border-radius: 2rem;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.2rem;
       cursor: pointer;
-      font-size: 1rem;
-      font-weight: 500;
+      font-size: 0.9rem;
+      font-weight: 600;
       color: var(--text-primary);
       transition: var(--transition);
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      backdrop-filter: blur(4px);
     }
 
     .theme-toggle:hover {
       background: var(--accent);
       color: white;
       border-color: var(--accent);
+      transform: translateY(-2px);
     }
 
     /* Section Styling */
     section {
       padding: 5rem 0;
       border-bottom: 1px solid var(--border-light);
+      position: relative;
     }
 
+    /* subtle glow behind sections */
+    section:nth-child(even)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: radial-gradient(circle at 10% 30%, var(--accent-glow), transparent 70%);
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .container { position: relative; z-index: 2; }
+
     .section-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
       letter-spacing: -0.02em;
       position: relative;
       display: inline-block;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .section-title:after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -12px;
       left: 0;
-      width: 60px;
+      width: 70px;
       height: 4px;
-      background: var(--accent);
+      background: var(--gradient-fitness);
       border-radius: 4px;
     }
 
@@ -141,8 +173,18 @@
       display: flex;
       align-items: center;
       padding: 2rem 0;
+      position: relative;
+      overflow: hidden;
     }
-
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 70% 20%, var(--accent-glow), transparent 70%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
     .hero-grid {
       display: flex;
       flex-wrap: wrap;
@@ -156,18 +198,20 @@
     }
 
     .hero-badge {
-      background: rgba(59,130,246,0.1);
+      background: var(--accent-glow);
       color: var(--accent);
-      padding: 0.3rem 1rem;
+      padding: 0.4rem 1.2rem;
       border-radius: 2rem;
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       display: inline-block;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(59,130,246,0.2);
     }
 
     .hero-content h1 {
-      font-size: 3.2rem;
+      font-size: 3.5rem;
       font-weight: 800;
       line-height: 1.2;
       margin-bottom: 1rem;
@@ -178,10 +222,11 @@
     }
 
     .hero-highlight {
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: var(--accent);
       margin-bottom: 1rem;
+      letter-spacing: -0.3px;
     }
 
     .hero-desc {
@@ -189,6 +234,7 @@
       color: var(--text-muted);
       max-width: 550px;
       margin: 1.5rem 0;
+      line-height: 1.6;
     }
 
     .hero-image {
@@ -200,49 +246,50 @@
     .profile-img-placeholder {
       width: 280px;
       height: 280px;
-      background: linear-gradient(145deg, #3b82f620, #8b5cf620);
+      background: linear-gradient(145deg, #3b82f610, #8b5cf610);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-lg);
       border: 3px solid var(--accent);
       overflow: hidden;
       background-color: var(--bg-secondary);
+      transition: transform 0.4s ease, box-shadow 0.3s;
     }
-
-    .profile-img-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .profile-img-placeholder:hover {
+      transform: scale(1.02);
+      box-shadow: 0 25px 30px -12px rgba(59,130,246,0.3);
     }
+    .profile-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* Skills Grid - modernized */
+    /* Skills Grid - modern cards */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
       gap: 1.8rem;
       margin-top: 1rem;
     }
 
     .skill-card {
       background: var(--card-bg);
-      border-radius: 1.25rem;
-      padding: 1.5rem;
+      border-radius: 1.5rem;
+      padding: 1.6rem;
       border: 1px solid var(--border-light);
       transition: var(--transition);
       box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(2px);
     }
 
     .skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
       border-color: var(--accent);
     }
 
     .skill-card h3 {
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
@@ -252,75 +299,67 @@
     .skill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
+      gap: 0.7rem;
     }
 
     .skill-tag {
       background: var(--bg-secondary);
-      padding: 0.3rem 0.9rem;
+      padding: 0.35rem 1rem;
       border-radius: 2rem;
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-size: 0.8rem;
+      font-weight: 600;
       color: var(--text-secondary);
       transition: var(--transition);
+      border: 1px solid transparent;
     }
 
     .skill-tag:hover {
       background: var(--accent);
       color: white;
+      transform: translateY(-2px);
+      border-color: var(--accent);
     }
 
-    /* Project Cards */
+    /* Project Cards - Premium */
     .project-card {
       background: var(--card-bg);
-      border-radius: 1.25rem;
+      border-radius: 1.5rem;
       padding: 1.8rem;
       border: 1px solid var(--border-light);
       transition: var(--transition);
       margin-bottom: 2rem;
       box-shadow: var(--shadow-sm);
       position: relative;
+      overflow: hidden;
     }
 
     .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
     }
 
-    .project-card.featured {
-      border-left: 5px solid transparent;
-      border-image: var(--gradient-fitness);
-      border-image-slice: 1;
-      background: var(--card-bg);
-      box-shadow: 0 20px 35px -12px rgba(59,130,246,0.15);
-    }
-    
     .project-card.super-featured {
       background: linear-gradient(145deg, rgba(59,130,246,0.02), rgba(139,92,246,0.02));
-      border: 1px solid var(--accent);
-      border-radius: 1.5rem;
-      box-shadow: 0 20px 35px -12px rgba(59,130,246,0.25);
-      position: relative;
-      overflow: hidden;
+      border-left: 1px solid var(--accent);
+      border-right: 1px solid var(--accent);
+      box-shadow: 0 20px 35px -12px rgba(59,130,246,0.2);
     }
-    
     body.dark .project-card.super-featured {
-      background: linear-gradient(145deg, rgba(59,130,246,0.05), rgba(139,92,246,0.03));
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+      background: linear-gradient(145deg, rgba(59,130,246,0.05), rgba(139,92,246,0.02));
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
     }
-    
     .project-card.super-featured::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #f59e0b);
       background-size: 200% 100%;
       animation: shimmer 3s infinite linear;
     }
-    
     @keyframes shimmer {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
@@ -329,23 +368,21 @@
     .featured-badge {
       position: absolute;
       top: -12px;
-      right: 20px;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      right: 24px;
+      background: var(--gradient-fitness);
       color: white;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.3rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.3rem 1.1rem;
       border-radius: 2rem;
       letter-spacing: 0.5px;
-      z-index: 2;
-      backdrop-filter: blur(4px);
+      z-index: 3;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    
     .super-featured-badge {
       background: linear-gradient(135deg, #f59e0b, #ef4444, #8b5cf6);
       animation: pulse-badge 2s infinite;
     }
-    
     @keyframes pulse-badge {
       0% { opacity: 0.9; box-shadow: 0 0 0 0 rgba(245,158,11,0.4); }
       70% { opacity: 1; box-shadow: 0 0 0 8px rgba(245,158,11,0); }
@@ -353,26 +390,28 @@
     }
 
     .project-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       gap: 0.8rem;
+      letter-spacing: -0.3px;
     }
 
     .project-tech {
       color: var(--accent);
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 1rem;
+      opacity: 0.85;
     }
 
     .project-desc {
       color: var(--text-secondary);
       margin-bottom: 1.2rem;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .project-links {
@@ -388,7 +427,7 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--bg-secondary);
-      padding: 0.5rem 1.2rem;
+      padding: 0.5rem 1.3rem;
       border-radius: 2rem;
       text-decoration: none;
       font-weight: 600;
@@ -398,22 +437,31 @@
       transition: var(--transition);
     }
 
-    .github-link i, .live-demo-link i, .sample-report-link i {
-      font-size: 1.1rem;
-      color: var(--accent);
-      transition: var(--transition);
-    }
-
     .github-link:hover, .live-demo-link:hover, .sample-report-link:hover {
       background: var(--accent);
       color: white;
       border-color: var(--accent);
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
-    .github-link:hover i, .live-demo-link:hover i, .sample-report-link:hover i {
-      color: white;
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1rem 0;
     }
+    .feature-chip {
+      background: var(--bg-secondary);
+      padding: 0.25rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+    }
+    .feature-chip i { color: var(--accent); font-size: 0.7rem; }
 
     .password-badge {
       display: inline-flex;
@@ -423,49 +471,24 @@
       border: 1px dashed var(--accent);
       padding: 0.5rem 1rem;
       border-radius: 2rem;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--accent);
       margin-top: 0.8rem;
       font-family: monospace;
     }
-    
-    .feature-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin: 1rem 0;
-    }
-    
-    .feature-chip {
-      background: var(--bg-secondary);
-      padding: 0.25rem 0.85rem;
-      border-radius: 2rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--text-muted);
-    }
-    
-    .feature-chip i {
-      color: var(--accent);
-      font-size: 0.7rem;
-    }
 
-    /* Contact Section */
+    /* Contact Cards Premium */
     .contact-links {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
-
     .contact-card {
       background: var(--card-bg);
-      padding: 1rem 2rem;
-      border-radius: 2rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 2.5rem;
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
@@ -473,105 +496,67 @@
       transition: var(--transition);
       text-decoration: none;
       color: var(--text-primary);
-      font-weight: 500;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
     }
-
-    .contact-card i {
-      font-size: 1.3rem;
-      color: var(--accent);
-    }
-
+    .contact-card i { font-size: 1.3rem; color: var(--accent); transition: var(--transition); }
     .contact-card:hover {
       background: var(--accent);
       color: white;
-      transform: translateY(-3px);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
     }
-
-    .contact-card:hover i {
-      color: white;
-    }
+    .contact-card:hover i { color: white; }
 
     footer {
       text-align: center;
       padding: 2rem 0;
       color: var(--text-muted);
       font-size: 0.85rem;
+      border-top: 1px solid var(--border-light);
     }
 
     /* Animations */
     @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(20px); }
+      0% { opacity: 0; transform: translateY(24px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-
     .animate-on-scroll {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
     }
-
     .animate-on-scroll.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-grid {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-      .hero-content h1 {
-        font-size: 2.5rem;
-      }
-      .hero-highlight {
-        font-size: 1.2rem;
-      }
-      .hero-desc {
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .section-title:after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .section-title {
-        display: block;
-        text-align: center;
-      }
-      .contact-links {
-        justify-content: center;
-      }
-      .profile-img-placeholder {
-        width: 220px;
-        height: 220px;
-      }
-      .project-title {
-        font-size: 1.3rem;
-      }
-      .featured-badge {
-        top: -10px;
-        right: 12px;
-        font-size: 0.7rem;
-      }
-    }
-
     .btn-resume {
       display: inline-block;
-      background: var(--accent);
+      background: var(--gradient-fitness);
       color: white;
-      padding: 0.7rem 1.8rem;
+      padding: 0.8rem 2rem;
       border-radius: 2rem;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       transition: var(--transition);
       margin-top: 0.5rem;
       border: none;
+      box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+    }
+    .btn-resume:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(59,130,246,0.4);
     }
 
-    .btn-resume:hover {
-      background: var(--accent-hover);
-      transform: scale(1.02);
+    @media (max-width: 768px) {
+      .hero-grid { flex-direction: column-reverse; text-align: center; }
+      .hero-content h1 { font-size: 2.4rem; }
+      .hero-highlight { font-size: 1.1rem; }
+      .section-title { font-size: 1.8rem; text-align: center; display: block; }
+      .section-title:after { left: 50%; transform: translateX(-50%); }
+      .profile-img-placeholder { width: 200px; height: 200px; }
+      .project-title { font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -586,241 +571,109 @@
   </nav>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero Section (Content Updated) -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content animate-on-scroll">
-          <div class="hero-badge">Machine Learning Engineer 🔥</div>
-          <h1>Machine Learning Engineer<br>Working on ML & NLP</h1>
-          <div class="hero-highlight">NLP & Deep Learning Focused</div>
+          <div class="hero-badge">Data Analytics & Data Science Enthusiast 📊</div>
+          <h1>Turning Data into Insights with Analytics & Machine Learning</h1>
+          <div class="hero-highlight">Data Analytics • Power BI • SQL • Machine Learning</div>
           <p class="hero-desc">
-            Passionate about turning data into intelligent systems. I thrive on solving real-world problems with Machine Learning, 
-            NLP, and deep learning — delivering impactful AI solutions.
+            Passionate about transforming raw data into meaningful insights through data analytics, visualization, and machine learning. I enjoy building end-to-end projects using Python, SQL, Power BI, and modern data science tools to solve real-world business problems.
           </p>
           <a href="#contact" class="btn-resume">Connect with me <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="hero-image animate-on-scroll">
           <div class="profile-img-placeholder">
-            <img src="image.png" alt="Akash Chauhan Profile" id="profileImage" style="object-fit: cover;">
+            <img src="image.png" alt="Akash Chauhan Profile" id="profileImage">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About Section Updated -->
     <section id="about">
       <div class="container">
         <h2 class="section-title animate-on-scroll">About Me</h2>
-        <div class="animate-on-scroll" style="max-width: 780px;">
-          <p style="font-size: 1.2rem; line-height: 1.6; color: var(--text-secondary);">
-            I'm an ML Engineer focused on building practical AI solutions using Machine Learning, NLP, and deep learning. 
-            Currently exploring retrieval-augmented generation, transformer architectures, and advanced model deployment. 
-            I believe in writing clean, reproducible code and shipping real-world projects that solve actual problems.
+        <div class="animate-on-scroll" style="max-width: 800px;">
+          <p style="font-size: 1.2rem; line-height: 1.7; color: var(--text-secondary);">
+            I am a Data Analytics & Data Science enthusiast who enjoys extracting insights from data and building data-driven solutions. My interests include data analysis, business intelligence, machine learning, and NLP. I focus on creating practical projects that combine analytics, visualization, and predictive modeling to solve real-world problems.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section Updated -->
     <section id="skills">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Skills & Technologies</h2>
         <div class="skills-grid">
-          <div class="skill-card animate-on-scroll">
-            <h3><i class="fab fa-python"></i> Programming & Data</h3>
-            <div class="skill-list">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">NumPy</span>
-              <span class="skill-tag">Pandas</span>
-              <span class="skill-tag">SQL</span>
-            </div>
-          </div>
-          <div class="skill-card animate-on-scroll">
-            <h3><i class="fas fa-chart-line"></i> Machine Learning</h3>
-            <div class="skill-list">
-              <span class="skill-tag">Scikit-learn</span>
-              <span class="skill-tag">EDA</span>
-              <span class="skill-tag">Feature Engineering</span>
-              <span class="skill-tag">Regression Models</span>
-              <span class="skill-tag">Classification Models</span>
-            </div>
-          </div>
-          <div class="skill-card animate-on-scroll">
-            <h3><i class="fas fa-brain"></i> Deep Learning & NLP</h3>
-            <div class="skill-list">
-              <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">Neural Networks</span>
-              <span class="skill-tag">NLP</span>
-              <span class="skill-tag">Transformers</span>
-              <span class="skill-tag">Sentiment Analysis</span>
-            </div>
-          </div>
-          <div class="skill-card animate-on-scroll">
-            <h3><i class="fas fa-tools"></i> Tools & Development</h3>
-            <div class="skill-list">
-              <span class="skill-tag">Flask</span>
-              <span class="skill-tag">Git & GitHub</span>
-              <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">Jupyter Notebook</span>
-              <span class="skill-tag">Render</span>
-            </div>
-          </div>
+          <div class="skill-card animate-on-scroll"><h3><i class="fas fa-chart-line"></i> Data Analytics</h3><div class="skill-list"><span class="skill-tag">Excel</span><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span><span class="skill-tag">Power Query</span><span class="skill-tag">DAX</span><span class="skill-tag">Data Cleaning</span><span class="skill-tag">Data Visualization</span><span class="skill-tag">EDA</span></div></div>
+          <div class="skill-card animate-on-scroll"><h3><i class="fab fa-python"></i> Programming</h3><div class="skill-list"><span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span></div></div>
+          <div class="skill-card animate-on-scroll"><h3><i class="fas fa-brain"></i> Data Science & ML</h3><div class="skill-list"><span class="skill-tag">Scikit-Learn</span><span class="skill-tag">Machine Learning</span><span class="skill-tag">Predictive Modeling</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">NLP</span></div></div>
+          <div class="skill-card animate-on-scroll"><h3><i class="fas fa-tools"></i> Tools & Development</h3><div class="skill-list"><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span><span class="skill-tag">Jupyter Notebook</span><span class="skill-tag">Flask</span></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section - NEW FEATURED PROJECT AT TOP -->
+    <!-- Projects Section (Flagship E-Commerce at TOP) -->
     <section id="projects">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Projects</h2>
         <div class="projects-container">
           
-          <!-- SUPER FEATURED: AI Data Report Generator (Latest Project) -->
-          <div class="project-card super-featured animate-on-scroll" style="margin-bottom: 2.5rem;">
-            <div class="featured-badge super-featured-badge"><i class="fas fa-chart-line"></i> LATEST RELEASE ⚡</div>
-            <div class="project-title">
-              🤖 AI Data Report Generator
-            </div>
-            <div class="project-tech">Python · Flask · Pandas · NumPy · ReportLab · Render · EDA Automation</div>
+          <!-- FLAGSHIP: E-Commerce Sales Analysis Dashboard -->
+          <div class="project-card super-featured animate-on-scroll">
+            <div class="featured-badge super-featured-badge"><i class="fas fa-chart-simple"></i> FLAGSHIP DATA ANALYTICS PROJECT 🚀</div>
+            <div class="project-title">🛒 E-Commerce Sales Analysis Dashboard</div>
+            <div class="project-tech">SQL • Python • Pandas • NumPy • Matplotlib • Seaborn • Power BI • Power Query • DAX</div>
             <div class="project-desc">
-              <strong>🚀 Automated EDA & Professional PDF Reporting — from hours to seconds!</strong> Built an AI-powered Flask application that instantly analyzes datasets, detects missing values, duplicates, outliers, and computes statistical summaries with a dataset health score. The system automates the entire exploratory data analysis workflow and generates polished PDF analytics reports, reducing manual reporting time drastically.
+              End-to-end Data Analytics project focused on analyzing e-commerce sales data using SQL, Python, and Power BI. The project covers data cleaning, exploratory data analysis, business insight generation, and dashboard development.
+              <br><br><strong>Key highlights:</strong> 83.47M total sales analyzed • 66K+ orders evaluated • Customer demographic analysis • Product category performance analysis • Payment method analysis • Monthly sales trend analysis • Interactive Power BI dashboard • KPI monitoring and business insights.
+              <br><br><strong>Business Value:</strong> This project demonstrates the complete Data Analytics workflow from raw data to business insights and executive dashboard reporting.
             </div>
-            
             <div class="feature-list">
-              <span class="feature-chip"><i class="fas fa-chart-pie"></i> Auto EDA</span>
-              <span class="feature-chip"><i class="fas fa-exclamation-triangle"></i> Missing Values</span>
-              <span class="feature-chip"><i class="fas fa-copy"></i> Duplicates</span>
-              <span class="feature-chip"><i class="fas fa-chart-line"></i> Outlier Detection</span>
-              <span class="feature-chip"><i class="fas fa-heartbeat"></i> Health Scoring</span>
-              <span class="feature-chip"><i class="fas fa-file-pdf"></i> PDF Reports</span>
+              <span class="feature-chip"><i class="fas fa-database"></i> SQL</span>
+              <span class="feature-chip"><i class="fab fa-python"></i> Python</span>
+              <span class="feature-chip"><i class="fas fa-chart-pie"></i> Power BI</span>
+              <span class="feature-chip"><i class="fas fa-calculator"></i> DAX</span>
+              <span class="feature-chip"><i class="fas fa-chart-line"></i> EDA</span>
+              <span class="feature-chip"><i class="fas fa-tachometer-alt"></i> Dashboard</span>
+              <span class="feature-chip"><i class="fas fa-chart-bar"></i> Business Analytics</span>
             </div>
-            
-            <div class="project-tech-tagset" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag">Flask</span>
-              <span class="skill-tag">Pandas/NumPy</span>
-              <span class="skill-tag">ReportLab</span>
-              <span class="skill-tag">Statistical Analysis</span>
-              <span class="skill-tag">Render Deployment</span>
-            </div>
-            
             <div class="project-links">
-              <a href="https://ai-data-report-generator.onrender.com/" target="_blank" rel="noopener noreferrer" class="live-demo-link">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-              <a href="https://github.com/AKASH-aAI/ai-data-report-generator" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-              <a href="https://drive.google.com/file/d/12ZoFaGHOz_zlCBmTDs-0nhDevX5cetw_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="sample-report-link">
-                <i class="fas fa-file-pdf"></i> Sample Report
-              </a>
-            </div>
-            
-            <div class="password-badge">
-              <i class="fas fa-lock"></i> Demo Access Password: <strong style="letter-spacing: 1px;">AIREPORT2026</strong>
-              <i class="fas fa-key" style="margin-left: 4px;"></i>
-            </div>
-            <div style="margin-top: 0.8rem; font-size: 0.75rem; color: var(--text-muted);">
-              <i class="fas fa-robot"></i> Instant dataset insights & professional PDF generation — upload CSV and get comprehensive analytics report.
+              <a href="https://github.com/AKASH-aAI/E-Commerce-Analysis" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repository</a>
             </div>
           </div>
 
-          <!-- Featured Project: AI Gym Workout Recommender -->
-          <div class="project-card featured animate-on-scroll">
-            <div class="featured-badge"><i class="fas fa-star"></i> Featured Project</div>
-            <div class="project-title">
-              AI Gym Workout Recommender 🤖💪
-            </div>
-            <div class="project-tech">Flask · Scikit-learn · Random Forest · Pandas · Render · JavaScript</div>
-            <div class="project-desc">
-              A full-stack AI web application that delivers personalized workout plans using a Random Forest model. 
-              Users input age, weight, fitness goals, and experience — the system recommends tailored exercises, complete with interactive timers, exercise visuals, and sound cues. 
-              Built with Flask backend, responsive frontend, and deployed on Render. 
-              <br><br>
-              <i class="fas fa-code-branch"></i> <strong>Development journey:</strong> Around 80% of the codebase was developed using AI-assisted tools to speed up development, while the project idea, machine learning workflow, backend integration, deployment, customization, and overall implementation decisions were handled by me.
-            </div>
-            <div class="project-tech-tagset" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Flask</span>
-              <span class="skill-tag">Random Forest</span>
-              <span class="skill-tag">Pandas/NumPy</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Render</span>
-            </div>
-            <div class="project-links">
-              <a href="https://ai-powered-gym-trainer-2.onrender.com" target="_blank" rel="noopener noreferrer" class="live-demo-link">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-              <a href="https://github.com/AKASH-aAI/ai-powered-gym-trainer" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-
-          <!-- Credit Card Fraud Detection -->
+          <!-- AI Data Report Generator (Updated desc: analytics automation) -->
           <div class="project-card animate-on-scroll">
-            <div class="project-title">💳 Credit Card Fraud Detection</div>
-            <div class="project-tech">Scikit-learn · SHAP · Imbalanced Learning</div>
+            <div class="project-title">🤖 AI Data Report Generator</div>
+            <div class="project-tech">Python • Flask • Pandas • NumPy • ReportLab • EDA Automation</div>
             <div class="project-desc">
-              End-to-end ML pipeline to detect fraudulent transactions with highly imbalanced data. Leveraged SMOTE, ensemble classifiers, and SHAP for model interpretability, achieving strong recall while maintaining precision.
+              Data Analytics automation project that instantly analyzes datasets, detects missing values, duplicates, outliers, and computes statistical summaries. Generates professional PDF analytics reports, reducing manual reporting time drastically. (Live Demo available with password)
             </div>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Pandas</span>
-              <span class="skill-tag">Scikit-learn</span>
-              <span class="skill-tag">SHAP</span>
-              <span class="skill-tag">Matplotlib</span>
-            </div>
+            <div class="feature-list"><span class="feature-chip"><i class="fas fa-robot"></i> Auto EDA</span><span class="feature-chip"><i class="fas fa-file-pdf"></i> PDF Reports</span></div>
             <div class="project-links">
-              <a href="https://github.com/AKASH-aAI/credit-card-fraud-detection" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> GitHub
-              </a>
+              <a href="https://ai-data-report-generator.onrender.com/" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/AKASH-aAI/ai-data-report-generator" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
             </div>
+            <div class="password-badge"><i class="fas fa-lock"></i> Demo Password: AIREPORT2026</div>
           </div>
 
-          <!-- Food Delivery Time Prediction -->
-          <div class="project-card animate-on-scroll">
-            <div class="project-title">🍔 Food Delivery Time Prediction</div>
-            <div class="project-tech">Regression · Feature Engineering · XGBoost</div>
-            <div class="project-desc">
-              Built a robust ML model to estimate delivery ETA based on distance, traffic, and weather. Extensive EDA and feature engineering led to improved accuracy, helping reduce delivery uncertainty.
-            </div>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Pandas/NumPy</span>
-              <span class="skill-tag">Scikit-learn</span>
-              <span class="skill-tag">XGBoost</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/AKASH-aAI/food-delivery-ml" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
+          <!-- AI Gym Workout Recommender -->
+          <div class="project-card animate-on-scroll"><div class="project-title">AI Gym Workout Recommender 🤖💪</div><div class="project-tech">Flask • Random Forest • Pandas • Render</div><div class="project-desc">Personalized workout plans using Random Forest. Users input age, weight, fitness goals — system recommends tailored exercises.</div><div class="project-links"><a href="https://ai-powered-gym-trainer-2.onrender.com" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/AKASH-aAI/ai-powered-gym-trainer" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a></div></div>
 
-          <!-- Emotion Detection (Sentiment Analysis) -->
-          <div class="project-card animate-on-scroll">
-            <div class="project-title">😊 Emotion Detection (Sentiment Analysis)</div>
-            <div class="project-tech">Transformers · DistilBERT · Hugging Face</div>
-            <div class="project-desc">
-              Fine-tuned transformer models (DistilBERT/RoBERTa) for multi-class emotion classification across joy, sadness, anger, and more. Built an intuitive interface to analyze real-time text sentiment, demonstrating advanced NLP pipelines and attention mechanisms.
-            </div>
-            <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 1rem;">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Transformers</span>
-              <span class="skill-tag">Hugging Face</span>
-              <span class="skill-tag">PyTorch</span>
-              <span class="skill-tag">Sentiment Analysis</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/AKASH-aAI/emotion-detection-nlp" target="_blank" rel="noopener noreferrer" class="github-link">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
+          <!-- Credit Card Fraud Detection (updated desc: EDA & fraud analytics) -->
+          <div class="project-card animate-on-scroll"><div class="project-title">💳 Credit Card Fraud Detection</div><div class="project-tech">Scikit-learn • SHAP • Imbalanced Learning</div><div class="project-desc">Advanced fraud analytics with extensive EDA, feature engineering, and ensemble classifiers using SMOTE. SHAP for interpretability, high recall with precision balance.</div><div class="project-links"><a href="https://github.com/AKASH-aAI/credit-card-fraud-detection" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+
+          <!-- Food Delivery Time Prediction (business analytics focus) -->
+          <div class="project-card animate-on-scroll"><div class="project-title">🍔 Food Delivery Time Prediction</div><div class="project-tech">Regression • XGBoost • Feature Engineering</div><div class="project-desc">Business analytics and prediction model estimating delivery ETA based on traffic, distance, and weather. Robust EDA and feature engineering for improved accuracy.</div><div class="project-links"><a href="https://github.com/AKASH-aAI/food-delivery-ml" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a></div></div>
+
+          <!-- Emotion Detection NLP (reduced deep learning emphasis) -->
+          <div class="project-card animate-on-scroll"><div class="project-title">😊 Emotion Detection NLP</div><div class="project-tech">Transformers • DistilBERT • Hugging Face</div><div class="project-desc">Multi-class emotion classification using fine-tuned transformer models. Real-time sentiment analysis demonstrating modern NLP pipelines and text representation.</div><div class="project-links"><a href="https://github.com/AKASH-aAI/emotion-detection-nlp" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a></div></div>
         </div>
-        <div class="animate-on-scroll" style="margin-top: 1rem; color: var(--text-muted); font-style: italic;">
-          <i class="fas fa-code-branch"></i> More real-world ML projects shipping soon — follow my GitHub for the latest.
-        </div>
+        <div class="animate-on-scroll" style="margin-top: 1.5rem; color: var(--text-muted);"><i class="fas fa-chart-line"></i> More data-driven projects coming soon — follow my GitHub.</div>
       </div>
     </section>
 
@@ -828,116 +681,44 @@
     <section id="contact">
       <div class="container">
         <h2 class="section-title animate-on-scroll">Let's Connect</h2>
-        <div class="animate-on-scroll">
-          <p style="margin-bottom: 1.2rem; color: var(--text-secondary);">I'm open to collaborations, ML opportunities, or just a tech chat!</p>
+        <div class="animate-on-scroll"><p style="margin-bottom:1rem;">Open to Data Analytics, Data Science roles & collaborations.</p>
           <div class="contact-links">
-            <a href="mailto:akashwork4413611@gmail.com" class="contact-card" id="emailLink">
-              <i class="fas fa-envelope"></i> <span id="emailText">akashwork4413611@gmail.com</span>
-            </a>
-            <a href="https://www.linkedin.com/in/akash-chauhan-a79605397/" target="_blank" rel="noopener noreferrer" class="contact-card">
-              <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/akashchauhan441" target="_blank" rel="noopener noreferrer" class="contact-card">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://www.kaggle.com/akashchauhan4413611" target="_blank" rel="noopener noreferrer" class="contact-card">
-              <i class="fab fa-kaggle"></i> Kaggle
-            </a>
+            <a href="mailto:akashwork4413611@gmail.com" class="contact-card" id="emailLink"><i class="fas fa-envelope"></i> <span id="emailText">akashwork4413611@gmail.com</span></a>
+            <a href="https://www.linkedin.com/in/akash-chauhan-a79605397/" target="_blank" class="contact-card"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/akashchauhan441" target="_blank" class="contact-card"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.kaggle.com/akashchauhan4413611" target="_blank" class="contact-card"><i class="fab fa-kaggle"></i> Kaggle</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>© 2025 Akash Chauhan — Machine Learning Engineer. Built with <i class="fas fa-heart" style="color: #3b82f6;"></i> using modern web tools.</p>
-    </div>
-  </footer>
+  <footer><div class="container"><p>© 2025 Akash Chauhan — Data Analytics & Data Science Enthusiast. Built with <i class="fas fa-heart" style="color: #3b82f6;"></i> modern analytics mindset.</p></div></footer>
 
   <script>
-    // Dark/Light Mode Toggle
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeToggle = document.getElementById('themeToggleBtn');
     const themeTextSpan = document.getElementById('themeText');
     const body = document.body;
-
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      body.classList.add('dark');
-      themeTextSpan.innerText = 'Light';
-      themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>';
-    } else {
-      body.classList.remove('dark');
-      themeTextSpan.innerText = 'Dark';
-      themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>';
-    }
-
-    themeToggleBtn.addEventListener('click', () => {
+    if (savedTheme === 'dark') { body.classList.add('dark'); themeToggle.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>'; }
+    else { themeToggle.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>'; }
+    themeToggle.addEventListener('click', () => {
       if (body.classList.contains('dark')) {
         body.classList.remove('dark');
         localStorage.setItem('theme', 'light');
-        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>';
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>';
       } else {
         body.classList.add('dark');
         localStorage.setItem('theme', 'dark');
-        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>';
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>';
       }
     });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === "#" || targetId === "") return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // Intersection Observer for animations
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
-
-    animatedElements.forEach(el => observer.observe(el));
-
-    // Profile image handler
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
     const profileImg = document.getElementById('profileImage');
-    if (profileImg) {
-      profileImg.addEventListener('dblclick', () => {
-        const newImgUrl = prompt("Enter URL for your profile image:", profileImg.src);
-        if (newImgUrl && newImgUrl.trim() !== "") {
-          profileImg.src = newImgUrl;
-        }
-      });
-      profileImg.title = "Double-click to change image URL";
-    }
-
-    // Email double-click edit
-    const emailAnchor = document.getElementById('emailLink');
-    const emailSpan = document.getElementById('emailText');
-    if (emailAnchor) {
-      emailAnchor.addEventListener('dblclick', (e) => {
-        e.preventDefault();
-        const newEmail = prompt("Enter your email address:", emailSpan.innerText);
-        if (newEmail && newEmail.includes('@')) {
-          emailSpan.innerText = newEmail;
-          emailAnchor.href = `mailto:${newEmail}`;
-        } else if (newEmail) {
-          alert("Please enter a valid email address.");
-        }
-      });
-      emailAnchor.title = "Double-click to update email address";
-    }
+    if(profileImg) { profileImg.addEventListener('dblclick', () => { let newUrl = prompt("Enter image URL:", profileImg.src); if(newUrl) profileImg.src = newUrl; }); }
+    const emailAnchor = document.getElementById('emailLink'), emailSpan = document.getElementById('emailText');
+    if(emailAnchor) emailAnchor.addEventListener('dblclick', (e) => { e.preventDefault(); let newEmail = prompt("Update email:", emailSpan.innerText); if(newEmail && newEmail.includes('@')) { emailSpan.innerText = newEmail; emailAnchor.href = `mailto:${newEmail}`; } });
   </script>
 </body>
 </html>

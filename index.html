@@ -1,767 +1,2181 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=yes">
-  <title>Akash Chauhan • Data Analytics & Science Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>Akash Chauhan | Data Analytics & Data Science</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <style>
-    * {
+
+    *, *::before, *::after {
+
       margin: 0;
+
       padding: 0;
+
       box-sizing: border-box;
+
     }
+
+
 
     :root {
-      --teal: #14B8A6;
-      --teal-dark: #0D9488;
-      --teal-soft: rgba(20, 184, 166, 0.08);
-      --teal-glow: 0 8px 28px rgba(20, 184, 166, 0.28);
-      --sky: #06B6D4;
-      --sky-soft: rgba(6, 182, 212, 0.08);
-      --gold: #F59E0B;
-      --gold-soft: rgba(245, 158, 11, 0.08);
-      --bg: #FAFCFF;
-      --surface: #FFFFFF;
-      --surface-2: #F1F5F9;
-      --text-1: #0F172A;
-      --text-2: #334155;
-      --text-3: #475569;
-      --border: #E2E8F0;
-      --border-s: rgba(20, 184, 166, 0.25);
-      --grad-main: linear-gradient(135deg, #14B8A6 0%, #06B6D4 100%);
-      --grad-gold: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
-      --grad-card: linear-gradient(145deg, #ffffff 0%, #F8FAFC 100%);
-      --grad-hero: radial-gradient(circle at 30% 20%, rgba(20, 184, 166, 0.06) 0%, rgba(6, 182, 212, 0.02) 70%);
-      --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
-      --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
-      --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.06), 0 4px 8px rgba(15, 23, 42, 0.04);
-      --shadow-lg: 0 24px 48px rgba(15, 23, 42, 0.08), 0 8px 16px rgba(15, 23, 42, 0.04);
-      --shadow-teal: 0 10px 24px rgba(20, 184, 166, 0.3);
-      --shadow-gold: 0 8px 20px rgba(245, 158, 11, 0.25);
-      --r-xl: 2rem;
-      --r-lg: 1.25rem;
-      --r-md: 0.9rem;
-      --ease: cubic-bezier(0.23, 1, 0.32, 1);
-      --transition: all 0.35s var(--ease);
+
+      --teal:        #14B8A6;
+
+      --teal-dark:   #0D9488;
+
+      --teal-soft:   rgba(20,184,166,0.10);
+
+      --teal-glow:   0 0 28px rgba(20,184,166,0.22);
+
+
+
+      --sky:         #0EA5E9;
+
+      --sky-soft:    rgba(14,165,233,0.09);
+
+
+
+      --gold:        #F59E0B;
+
+      --gold-soft:   rgba(245,158,11,0.12);
+
+
+
+      --bg:          #F6FAFB;
+
+      --surface:     #FFFFFF;
+
+      --surface-2:   #EEF5F5;
+
+
+
+      --text-1:      #0F172A;
+
+      --text-2:      #334155;
+
+      --text-3:      #64748B;
+
+
+
+      --border:      #D9EAE8;
+
+      --border-s:    rgba(20,184,166,0.18);
+
+
+
+      --grad-main:   linear-gradient(135deg, #14B8A6 0%, #0EA5E9 100%);
+
+      --grad-gold:   linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+
+      --grad-card:   linear-gradient(145deg, #ffffff 0%, #F0FAFA 100%);
+
+      --grad-hero:   linear-gradient(135deg, rgba(20,184,166,0.06) 0%, rgba(14,165,233,0.04) 100%);
+
+
+
+      --shadow-xs:   0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+
+      --shadow-sm:   0 4px 12px rgba(15,23,42,0.07), 0 2px 4px rgba(15,23,42,0.04);
+
+      --shadow-md:   0 10px 28px rgba(15,23,42,0.08), 0 4px 8px rgba(15,23,42,0.04);
+
+      --shadow-lg:   0 20px 48px rgba(15,23,42,0.10), 0 8px 16px rgba(15,23,42,0.05);
+
+      --shadow-teal: 0 8px 24px rgba(20,184,166,0.25);
+
+      --shadow-gold: 0 6px 20px rgba(245,158,11,0.25);
+
+
+
+      --r-xl:  2.2rem;
+
+      --r-lg:  1.5rem;
+
+      --r-md:  1rem;
+
+      --r-sm:  0.6rem;
+
+
+
+      --ease:  cubic-bezier(0.22, 1, 0.36, 1);
+
+      --t:     all 0.3s var(--ease);
+
     }
+
+
 
     body.dark {
-      --bg: #0B1120;
-      --surface: #111827;
-      --surface-2: #1E293B;
-      --text-1: #F1F5F9;
-      --text-2: #CBD5E1;
-      --text-3: #94A3B8;
-      --border: #1E293B;
-      --border-s: rgba(20, 184, 166, 0.35);
-      --grad-card: linear-gradient(145deg, #111827 0%, #0F172A 100%);
-      --grad-hero: radial-gradient(circle at 30% 20%, rgba(20, 184, 166, 0.12) 0%, rgba(6, 182, 212, 0.04) 70%);
-      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
-      --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.5);
-      --shadow-lg: 0 24px 48px rgba(0, 0, 0, 0.6);
-      --teal-soft: rgba(20, 184, 166, 0.12);
-      --sky-soft: rgba(6, 182, 212, 0.1);
-      --gold-soft: rgba(245, 158, 11, 0.1);
+
+      --bg:        #071018;
+
+      --surface:   #0F1C2E;
+
+      --surface-2: #0A1929;
+
+
+
+      --text-1:    #F0F9FF;
+
+      --text-2:    #BAE6FD;
+
+      --text-3:    #7ECDE8;
+
+
+
+      --border:    rgba(20,184,166,0.15);
+
+      --border-s:  rgba(20,184,166,0.25);
+
+
+
+      --grad-card: linear-gradient(145deg, #0F1C2E 0%, #091525 100%);
+
+      --grad-hero: linear-gradient(135deg, rgba(20,184,166,0.10) 0%, rgba(14,165,233,0.06) 100%);
+
+
+
+      --shadow-sm:   0 4px 12px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+
+      --shadow-md:   0 10px 28px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.25);
+
+      --shadow-lg:   0 20px 48px rgba(0,0,0,0.55), 0 8px 16px rgba(0,0,0,0.3);
+
+      --teal-soft:   rgba(20,184,166,0.14);
+
+      --sky-soft:    rgba(14,165,233,0.12);
+
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+
+
+    html { scroll-behavior: smooth; }
+
+
 
     body {
+
       font-family: 'Inter', sans-serif;
+
       background: var(--bg);
+
       color: var(--text-1);
-      line-height: 1.5;
+
+      line-height: 1.6;
+
       font-weight: 400;
-      transition: background 0.3s, color 0.3s;
+
+      transition: background 0.35s, color 0.25s;
+
       overflow-x: hidden;
+
     }
+
+
 
     .container {
-      max-width: 1200px;
+
+      max-width: 1160px;
+
       margin: 0 auto;
-      padding: 0 1.8rem;
+
+      padding: 0 1.5rem;
+
     }
+
+
+
+    /* ─── NOISE TEXTURE OVERLAY ─── */
 
     body::before {
+
       content: '';
+
       position: fixed;
+
       inset: 0;
+
       pointer-events: none;
+
       z-index: 0;
-      opacity: 0.015;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 180px 180px;
+
+      opacity: 0.018;
+
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+
+      background-size: 200px 200px;
+
     }
 
-    /* ─── NAVBAR (glass floating) ─── */
+
+
+    /* ─── NAVBAR ─── */
+
     .navbar {
+
       position: sticky;
-      top: 1.2rem;
-      z-index: 100;
+
+      top: 1rem;
+
+      z-index: 200;
+
       padding: 0 1.5rem;
+
     }
+
     .nav-inner {
-      max-width: 1100px;
+
+      max-width: 1000px;
+
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(18px) saturate(2);
-      -webkit-backdrop-filter: blur(18px) saturate(2);
-      border: 1px solid rgba(20, 184, 166, 0.2);
+
+      background: rgba(255,255,255,0.80);
+
+      backdrop-filter: blur(20px) saturate(1.6);
+
+      -webkit-backdrop-filter: blur(20px) saturate(1.6);
+
+      border: 1px solid rgba(20,184,166,0.15);
+
       border-radius: 3rem;
-      padding: 0.7rem 1.8rem;
+
+      padding: 0.75rem 1.6rem;
+
       display: flex;
+
       justify-content: space-between;
+
       align-items: center;
-      box-shadow: 0 8px 22px rgba(20, 184, 166, 0.08);
-      transition: var(--transition);
+
+      box-shadow: 0 4px 20px rgba(20,184,166,0.10), 0 1px 4px rgba(15,23,42,0.06);
+
+      transition: var(--t);
+
     }
+
     body.dark .nav-inner {
-      background: rgba(15, 23, 42, 0.8);
-      border-color: rgba(20, 184, 166, 0.25);
+
+      background: rgba(7,16,24,0.80);
+
+      border-color: rgba(20,184,166,0.20);
+
     }
+
     .logo {
+
       font-family: 'Poppins', sans-serif;
+
       font-weight: 800;
-      font-size: 1.5rem;
+
+      font-size: 1.45rem;
+
       background: var(--grad-main);
+
       -webkit-background-clip: text;
+
       background-clip: text;
+
       color: transparent;
+
       letter-spacing: -0.4px;
+
     }
+
     .theme-toggle {
+
       background: var(--surface-2);
+
       border: 1px solid var(--border);
+
       border-radius: 2.5rem;
-      padding: 0.5rem 1.2rem;
+
+      padding: 0.45rem 1.1rem;
+
       cursor: pointer;
+
+      font-size: 0.88rem;
+
       font-weight: 600;
-      font-size: 0.85rem;
+
       color: var(--text-2);
+
       display: flex;
+
       align-items: center;
-      gap: 0.4rem;
-      transition: var(--transition);
+
+      gap: 0.45rem;
+
+      transition: var(--t);
+
       font-family: 'Inter', sans-serif;
-      background: rgba(20, 184, 166, 0.05);
+
     }
+
     .theme-toggle:hover {
+
       background: var(--teal);
-      color: white;
+
+      color: #fff;
+
       border-color: var(--teal);
+
       box-shadow: var(--shadow-teal);
-      transform: translateY(-2px);
+
+      transform: translateY(-1px);
+
     }
+
+
+
+    /* ─── SECTION BASE ─── */
 
     section {
-      padding: 5rem 0;
+
+      padding: 5.5rem 0;
+
       position: relative;
-      z-index: 1;
+
     }
+
+
 
     .section-title {
+
       font-family: 'Poppins', sans-serif;
-      font-size: 2.2rem;
+
+      font-size: 2rem;
+
       font-weight: 700;
-      margin-bottom: 2.8rem;
-      letter-spacing: -0.02em;
-      display: inline-block;
+
+      margin-bottom: 3rem;
+
+      letter-spacing: -0.03em;
+
+      color: var(--text-1);
+
       position: relative;
+
+      display: inline-block;
+
     }
+
     .section-title span {
+
       background: var(--grad-main);
+
       -webkit-background-clip: text;
+
       background-clip: text;
+
       color: transparent;
+
     }
+
     .section-title::after {
+
       content: '';
+
       position: absolute;
+
       bottom: -10px;
+
       left: 0;
-      width: 55px;
-      height: 4px;
+
+      width: 48px;
+
+      height: 3px;
+
       background: var(--grad-main);
-      border-radius: 4px;
+
+      border-radius: 3px;
+
     }
+
+
 
     /* ─── HERO ─── */
+
     .hero {
-      min-height: 85vh;
+
+      min-height: 90vh;
+
       display: flex;
+
       align-items: center;
-      background: var(--grad-hero);
+
+      padding: 6rem 0 5rem;
+
       overflow: hidden;
-      position: relative;
+
     }
-    .hero-blob-1, .hero-blob-2 {
+
+
+
+    /* decorative blobs */
+
+    .hero-blob-1,
+
+    .hero-blob-2,
+
+    .hero-blob-3 {
+
       position: absolute;
+
       border-radius: 50%;
-      filter: blur(60px);
-      opacity: 0.3;
+
+      pointer-events: none;
+
       z-index: 0;
+
     }
+
     .hero-blob-1 {
-      width: 450px; height: 450px;
-      background: rgba(20, 184, 166, 0.15);
-      top: -100px; right: -100px;
+
+      width: 520px; height: 520px;
+
+      background: radial-gradient(circle, rgba(20,184,166,0.13) 0%, transparent 70%);
+
+      top: -140px; right: -120px;
+
     }
+
     .hero-blob-2 {
-      width: 350px; height: 350px;
-      background: rgba(6, 182, 212, 0.12);
+
+      width: 360px; height: 360px;
+
+      background: radial-gradient(circle, rgba(14,165,233,0.10) 0%, transparent 70%);
+
       bottom: -80px; left: -80px;
+
     }
+
+    .hero-blob-3 {
+
+      width: 200px; height: 200px;
+
+      background: radial-gradient(circle, rgba(245,158,11,0.10) 0%, transparent 70%);
+
+      top: 30%; left: 40%;
+
+    }
+
+
+
     .hero-grid {
+
       display: flex;
+
       flex-wrap: wrap;
+
       align-items: center;
+
       justify-content: space-between;
-      gap: 2.5rem;
+
+      gap: 3rem;
+
       position: relative;
+
       z-index: 2;
+
+      width: 100%;
+
     }
-    .hero-content {
-      flex: 1 1 450px;
-    }
+
+    .hero-content { flex: 1 1 420px; }
+
+
+
     .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(20, 184, 166, 0.1);
-      border: 1px solid rgba(20, 184, 166, 0.3);
-      color: var(--teal-dark);
-      padding: 0.4rem 1.2rem;
-      border-radius: 2.5rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      backdrop-filter: blur(10px);
-    }
-    body.dark .hero-badge { color: #5EEAD4; }
-    .hero-content h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 3.4rem;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 1rem;
-    }
-    .hero-content h1 em {
-      font-style: normal;
-      background: var(--grad-main);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-highlight {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1.5rem 0 1rem;
-    }
-    .hero-highlight span {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 0.3rem 1rem;
-      border-radius: 2rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-2);
-    }
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-3);
-      max-width: 550px;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-    .hero-image {
-      flex: 0 0 auto;
-    }
-    .profile-img-placeholder {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: conic-gradient(from 180deg, #14B8A6, #06B6D4, #F59E0B, #14B8A6);
-      padding: 4px;
-      box-shadow: var(--shadow-lg), 0 0 35px rgba(20, 184, 166, 0.4);
-      transition: 0.4s;
-    }
-    .profile-img-placeholder:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 45px rgba(20, 184, 166, 0.6);
-    }
-    .profile-img-inner {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      overflow: hidden;
-      background: var(--surface);
-    }
-    .profile-img-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .btn-resume {
-      background: var(--grad-main);
-      color: white;
-      padding: 0.85rem 2.2rem;
-      border-radius: 3rem;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      box-shadow: var(--shadow-teal);
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-    .btn-resume:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 30px rgba(20, 184, 166, 0.45);
-    }
 
-    /* about */
-    #about p {
-      font-size: 1.1rem;
-      background: var(--grad-card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 2rem 2.2rem;
-      box-shadow: var(--shadow-sm);
-      color: var(--text-2);
-    }
+      display: inline-flex;
 
-    /* skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-    }
-    .skill-card {
-      background: var(--grad-card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 1.8rem;
-      transition: var(--transition);
-      position: relative;
-    }
-    .skill-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-md), 0 0 25px rgba(20,184,166,0.15);
-      border-color: var(--border-s);
-    }
-    .skill-card h3 {
-      display: flex;
       align-items: center;
+
       gap: 0.5rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
-      color: var(--text-1);
-    }
-    .skill-card h3 i {
-      background: var(--grad-main);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .skill-tag {
+
       background: var(--teal-soft);
-      border: 1px solid var(--border-s);
-      padding: 0.3rem 0.9rem;
-      border-radius: 2rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--teal-dark);
-    }
-    body.dark .skill-tag { color: #5EEAD4; }
 
-    /* projects */
-    .projects-container {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .project-card {
-      background: var(--grad-card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 2rem 2.2rem;
-      position: relative;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: var(--shadow-sm);
-    }
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg), 0 0 30px rgba(20,184,166,0.12);
-    }
-    .project-card.featured {
-      border-left: 4px solid var(--teal);
-    }
-    .project-card.super-featured {
-      background: linear-gradient(145deg, rgba(20,184,166,0.02) 0%, rgba(6,182,212,0.02) 100%);
-      border: 1px solid rgba(20,184,166,0.3);
-    }
-    .featured-badge {
-      position: absolute;
-      top: 20px; right: 24px;
-      background: var(--grad-main);
-      color: white;
-      padding: 0.4rem 1.2rem;
-      border-radius: 2rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      box-shadow: var(--shadow-teal);
-      z-index: 5;
-    }
-    .super-featured-badge {
-      background: linear-gradient(135deg, #F59E0B, #EF4444, #14B8A6);
-    }
-    .project-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 0.8rem;
-      padding-right: 12rem;
-    }
-    .project-tech {
-      background: rgba(20,184,166,0.08);
-      border: 1px solid rgba(20,184,166,0.2);
-      padding: 0.4rem 1.2rem;
-      border-radius: 2rem;
-      font-size: 0.8rem;
-      font-weight: 600;
+      border: 1px solid var(--border-s);
+
       color: var(--teal-dark);
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-bottom: 1.2rem;
-    }
-    .project-desc {
-      color: var(--text-2);
-      margin-bottom: 1.2rem;
-    }
-    .metrics-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 1rem 0;
-    }
-    .metric-item {
-      background: rgba(245,158,11,0.1);
-      border: 1px solid rgba(245,158,11,0.3);
-      padding: 0.3rem 1rem;
-      border-radius: 2rem;
-      font-weight: 700;
-      color: #B45309;
-    }
-    .feature-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1rem 0;
-    }
-    .feature-chip {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      padding: 0.3rem 1rem;
-      border-radius: 2rem;
-      font-size: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      padding-top: 1.5rem;
-    }
-    .github-link, .live-demo-link, .sample-report-link {
-      padding: 0.6rem 1.4rem;
+
+      padding: 0.38rem 1.1rem;
+
       border-radius: 2.5rem;
+
+      font-size: 0.82rem;
+
       font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: var(--transition);
-      background: var(--surface-2);
-      color: var(--text-1);
-      border: 1px solid var(--border);
+
+      margin-bottom: 1.4rem;
+
+      letter-spacing: 0.01em;
+
     }
-    .github-link:hover { background: #0F172A; color: white; }
-    .live-demo-link:hover { background: var(--teal); color: white; }
+
+    body.dark .hero-badge { color: var(--teal); }
+
+
+
+    .hero-content h1 {
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 3.2rem;
+
+      font-weight: 800;
+
+      line-height: 1.18;
+
+      letter-spacing: -0.03em;
+
+      color: var(--text-1);
+
+      margin-bottom: 1rem;
+
+    }
+
+    .hero-content h1 em {
+
+      font-style: normal;
+
+      background: var(--grad-main);
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+
+      color: transparent;
+
+    }
+
+
+
+    .hero-highlight {
+
+      font-size: 1rem;
+
+      font-weight: 600;
+
+      color: var(--teal-dark);
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.5rem;
+
+      margin-bottom: 1.2rem;
+
+    }
+
+    body.dark .hero-highlight { color: var(--teal); }
+
+    .hero-highlight span {
+
+      background: var(--surface-2);
+
+      border: 1px solid var(--border);
+
+      padding: 0.28rem 0.9rem;
+
+      border-radius: 2rem;
+
+      font-size: 0.82rem;
+
+    }
+
+
+
+    .hero-desc {
+
+      font-size: 1.05rem;
+
+      color: var(--text-3);
+
+      max-width: 520px;
+
+      line-height: 1.7;
+
+      margin: 1.2rem 0 1.8rem;
+
+    }
+
+
+
+    .hero-image { flex: 0 0 auto; display: flex; justify-content: center; }
+
+
+
+    .profile-img-placeholder {
+
+      width: 270px;
+
+      height: 270px;
+
+      border-radius: 50%;
+
+      position: relative;
+
+      overflow: hidden;
+
+      box-shadow: var(--shadow-lg), var(--teal-glow);
+
+      transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+
+      /* multi-stop conic ring */
+
+      background: conic-gradient(from 180deg, #14B8A6, #0EA5E9, #F59E0B, #14B8A6);
+
+      padding: 3px;
+
+    }
+
+    .profile-img-placeholder:hover {
+
+      transform: scale(1.03) rotate(1deg);
+
+      box-shadow: var(--shadow-lg), 0 0 40px rgba(20,184,166,0.35);
+
+    }
+
+    .profile-img-inner {
+
+      width: 100%;
+
+      height: 100%;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      background: var(--surface);
+
+    }
+
+    .profile-img-placeholder img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+
+    }
+
+
+
+    /* ─── ABOUT ─── */
+
+    #about p {
+
+      font-size: 1.12rem;
+
+      color: var(--text-2);
+
+      line-height: 1.75;
+
+      max-width: 760px;
+
+      background: var(--grad-card);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--r-lg);
+
+      padding: 2rem 2.2rem;
+
+      box-shadow: var(--shadow-sm);
+
+    }
+
+
+
+    /* ─── SKILLS ─── */
+
+    .skills-grid {
+
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+
+      gap: 1.6rem;
+
+    }
+
+    .skill-card {
+
+      background: var(--grad-card);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--r-lg);
+
+      padding: 1.7rem;
+
+      box-shadow: var(--shadow-sm);
+
+      transition: var(--t);
+
+      position: relative;
+
+      overflow: hidden;
+
+    }
+
+    .skill-card::before {
+
+      content: '';
+
+      position: absolute;
+
+      top: 0; left: 0; right: 0;
+
+      height: 3px;
+
+      background: var(--grad-main);
+
+      opacity: 0;
+
+      transition: opacity 0.3s;
+
+    }
+
+    .skill-card:hover {
+
+      transform: translateY(-6px);
+
+      box-shadow: var(--shadow-md), var(--teal-glow);
+
+      border-color: var(--border-s);
+
+    }
+
+    .skill-card:hover::before { opacity: 1; }
+
+
+
+    .skill-card h3 {
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 1.05rem;
+
+      font-weight: 700;
+
+      margin-bottom: 1.1rem;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 0.55rem;
+
+      color: var(--text-1);
+
+    }
+
+    .skill-card h3 i {
+
+      background: var(--grad-main);
+
+      -webkit-background-clip: text;
+
+      background-clip: text;
+
+      color: transparent;
+
+    }
+
+    .skill-list {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.55rem;
+
+    }
+
+    .skill-tag {
+
+      background: var(--teal-soft);
+
+      border: 1px solid var(--border-s);
+
+      color: var(--teal-dark);
+
+      padding: 0.3rem 0.9rem;
+
+      border-radius: 2rem;
+
+      font-size: 0.8rem;
+
+      font-weight: 500;
+
+      transition: var(--t);
+
+    }
+
+    body.dark .skill-tag { color: var(--teal); }
+
+    .skill-tag:hover {
+
+      background: var(--teal);
+
+      color: #fff;
+
+      border-color: var(--teal);
+
+      transform: translateY(-2px);
+
+    }
+
+
+
+    /* ─── PROJECTS ─── */
+
+    .projects-container {
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 2rem;
+
+    }
+
+
+
+    /* base project card */
+
+    .project-card {
+
+      background: var(--grad-card);
+
+      border: 1px solid var(--border);
+
+      border-radius: var(--r-xl);
+
+      padding: 2.2rem 2.4rem;
+
+      box-shadow: var(--shadow-md);
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+
+    }
+
+    .project-card:hover {
+
+      transform: translateY(-7px);
+
+      box-shadow: var(--shadow-lg), var(--teal-glow);
+
+      border-color: var(--border-s);
+
+    }
+
+
+
+    /* featured */
+
+    .project-card.featured {
+
+      border-left: 4px solid var(--teal);
+
+    }
+
+
+
+    /* super-featured: animated gradient top bar */
+
+    .project-card.super-featured {
+
+      border: 1px solid rgba(20,184,166,0.35);
+
+      background: linear-gradient(155deg, rgba(20,184,166,0.04) 0%, rgba(14,165,233,0.025) 60%, rgba(245,158,11,0.025) 100%);
+
+    }
+
+    body.dark .project-card.super-featured {
+
+      background: linear-gradient(155deg, rgba(20,184,166,0.09) 0%, rgba(14,165,233,0.055) 60%, rgba(245,158,11,0.04) 100%);
+
+    }
+
+    .project-card.super-featured::before {
+
+      content: '';
+
+      position: absolute;
+
+      top: 0; left: 0; right: 0;
+
+      height: 3px;
+
+      background: linear-gradient(90deg, #14B8A6, #0EA5E9, #F59E0B, #14B8A6);
+
+      background-size: 300% 100%;
+
+      animation: shimmer 4s linear infinite;
+
+    }
+
+    @keyframes shimmer {
+
+      0%   { background-position: 300% 0; }
+
+      100% { background-position: -300% 0; }
+
+    }
+
+
+
+    /* badges */
+
+    .featured-badge {
+
+      position: absolute;
+
+      top: 18px; right: 22px;
+
+      font-size: 0.72rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.5px;
+
+      padding: 0.32rem 1.1rem;
+
+      border-radius: 2rem;
+
+      z-index: 5;
+
+      background: var(--grad-main);
+
+      color: #fff;
+
+      box-shadow: var(--shadow-teal);
+
+    }
+
+    .super-featured-badge {
+
+      background: linear-gradient(135deg, #F59E0B 0%, #EF4444 50%, #14B8A6 100%);
+
+      animation: badge-pulse 2.5s ease-in-out infinite;
+
+    }
+
+    @keyframes badge-pulse {
+
+      0%, 100% { box-shadow: 0 0 0 0 rgba(245,158,11,0.4); }
+
+      50%       { box-shadow: 0 0 0 8px rgba(245,158,11,0); }
+
+    }
+
+
+
+    .project-title {
+
+      font-family: 'Poppins', sans-serif;
+
+      font-size: 1.55rem;
+
+      font-weight: 700;
+
+      color: var(--text-1);
+
+      margin-bottom: 0.6rem;
+
+      letter-spacing: -0.02em;
+
+      padding-right: 10rem; /* room for badge */
+
+      line-height: 1.3;
+
+    }
+
+
+
+    .project-tech {
+
+      display: inline-flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.35rem;
+
+      background: var(--teal-soft);
+
+      border: 1px solid var(--border-s);
+
+      border-radius: 2.5rem;
+
+      padding: 0.38rem 1.1rem;
+
+      font-size: 0.8rem;
+
+      font-weight: 600;
+
+      color: var(--teal-dark);
+
+      margin-bottom: 1.3rem;
+
+      max-width: 100%;
+
+    }
+
+    body.dark .project-tech { color: var(--teal); }
+
+
+
+    .project-desc {
+
+      color: var(--text-2);
+
+      line-height: 1.72;
+
+      font-size: 0.97rem;
+
+      margin-bottom: 1.3rem;
+
+    }
+
+    .project-desc strong {
+
+      color: var(--text-1);
+
+      font-weight: 600;
+
+    }
+
+
+
+    .metrics-grid {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.7rem;
+
+      margin: 1rem 0;
+
+    }
+
+    .metric-item {
+
+      background: var(--gold-soft);
+
+      border: 1px solid rgba(245,158,11,0.25);
+
+      color: #92400E;
+
+      border-radius: 2rem;
+
+      padding: 0.3rem 1.1rem;
+
+      font-size: 0.82rem;
+
+      font-weight: 700;
+
+    }
+
+    body.dark .metric-item {
+
+      color: #FCD34D;
+
+      background: rgba(245,158,11,0.10);
+
+      border-color: rgba(245,158,11,0.20);
+
+    }
+
+
+
+    .feature-list {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.6rem;
+
+      margin: 0.9rem 0;
+
+    }
+
+    .feature-chip {
+
+      background: var(--surface-2);
+
+      border: 1px solid var(--border);
+
+      padding: 0.32rem 1rem;
+
+      border-radius: 2rem;
+
+      font-size: 0.78rem;
+
+      font-weight: 500;
+
+      color: var(--text-3);
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.4rem;
+
+      transition: var(--t);
+
+    }
+
+    .feature-chip i { color: var(--teal); font-size: 0.72rem; }
+
+    .feature-chip:hover {
+
+      background: var(--teal-soft);
+
+      border-color: var(--border-s);
+
+      color: var(--teal-dark);
+
+    }
+
+
+
+    .project-links {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 0.9rem;
+
+      align-items: center;
+
+      margin-top: 1.3rem;
+
+      padding-top: 1.3rem;
+
+      border-top: 1px solid var(--border);
+
+    }
+
+    .github-link, .live-demo-link, .sample-report-link {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.55rem;
+
+      background: var(--surface-2);
+
+      border: 1px solid var(--border);
+
+      padding: 0.62rem 1.4rem;
+
+      border-radius: 2.5rem;
+
+      font-size: 0.87rem;
+
+      font-weight: 600;
+
+      color: var(--text-1);
+
+      text-decoration: none;
+
+      transition: var(--t);
+
+    }
+
+    .github-link:hover {
+
+      background: #0F172A;
+
+      color: #fff;
+
+      border-color: #0F172A;
+
+      transform: translateY(-3px);
+
+      box-shadow: 0 8px 20px rgba(15,23,42,0.25);
+
+    }
+
+    body.dark .github-link:hover {
+
+      background: var(--teal);
+
+      border-color: var(--teal);
+
+      box-shadow: var(--shadow-teal);
+
+    }
+
+    .live-demo-link:hover, .sample-report-link:hover {
+
+      background: var(--teal);
+
+      color: #fff;
+
+      border-color: var(--teal);
+
+      transform: translateY(-3px);
+
+      box-shadow: var(--shadow-teal);
+
+    }
+
+    .password-badge {
+
+      background: var(--surface-2);
+
+      border: 1px solid var(--border);
+
+      border-radius: 2rem;
+
+      padding: 0.38rem 1.1rem;
+
+      font-size: 0.8rem;
+
+      color: var(--text-3);
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.4rem;
+
+    }
+
+
+
+    /* ─── CTA BUTTON (hero) ─── */
+
+    .btn-resume {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.55rem;
+
+      background: var(--grad-main);
+
+      color: #fff;
+
+      padding: 0.82rem 2.1rem;
+
+      border-radius: 3rem;
+
+      font-weight: 700;
+
+      font-size: 0.95rem;
+
+      text-decoration: none;
+
+      border: none;
+
+      cursor: pointer;
+
+      transition: var(--t);
+
+      box-shadow: var(--shadow-teal);
+
+    }
+
+    .btn-resume:hover {
+
+      transform: translateY(-3px) scale(1.02);
+
+      box-shadow: 0 12px 28px rgba(20,184,166,0.4);
+
+    }
+
+    .btn-resume i { transition: transform 0.3s var(--ease); }
+
+    .btn-resume:hover i { transform: translateX(4px); }
+
+
+
+    /* ─── CONTACT ─── */
 
     .contact-links {
+
       display: flex;
+
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1.8rem;
+
+      gap: 1.2rem;
+
+      margin-top: 1.5rem;
+
     }
+
     .contact-card {
+
       background: var(--grad-card);
+
       border: 1px solid var(--border);
-      padding: 0.8rem 1.8rem;
+
+      padding: 0.85rem 1.7rem;
+
       border-radius: 3rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--text-1);
-      display: flex;
+
+      display: inline-flex;
+
       align-items: center;
-      gap: 0.6rem;
-      transition: var(--transition);
+
+      gap: 0.7rem;
+
+      font-weight: 600;
+
+      font-size: 0.92rem;
+
+      color: var(--text-1);
+
+      text-decoration: none;
+
+      box-shadow: var(--shadow-xs);
+
+      transition: var(--t);
+
     }
+
+    .contact-card i { color: var(--teal); font-size: 1.1rem; transition: var(--t); }
+
     .contact-card:hover {
+
       background: var(--teal);
-      color: white;
+
+      color: #fff;
+
       border-color: var(--teal);
+
       transform: translateY(-4px);
+
       box-shadow: var(--shadow-teal);
+
     }
+
+    .contact-card:hover i { color: #fff; }
+
+
+
+    /* ─── FOOTER ─── */
 
     footer {
+
       border-top: 1px solid var(--border);
-      padding: 2rem 0;
+
+      padding: 2.2rem 0;
+
       text-align: center;
+
       color: var(--text-3);
+
+      font-size: 0.84rem;
+
     }
+
+    footer i { color: var(--teal); }
+
+
+
+    /* ─── SCROLL ANIMATION ─── */
 
     .animate-on-scroll {
+
       opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+
+      transform: translateY(28px);
+
+      transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
+
     }
+
     .animate-on-scroll.visible {
+
       opacity: 1;
+
       transform: translateY(0);
+
     }
+
+
+
+    /* ─── RESPONSIVE ─── */
 
     @media (max-width: 768px) {
+
       .hero-grid { flex-direction: column-reverse; text-align: center; }
-      .project-title { padding-right: 0; font-size: 1.4rem; }
+
+      .hero-content h1 { font-size: 2.2rem; }
+
+      .hero-highlight { justify-content: center; }
+
+      .hero-desc { margin-left: auto; margin-right: auto; }
+
+      .section-title::after { left: 50%; transform: translateX(-50%); }
+
+      .section-title { display: block; text-align: center; }
+
+      .contact-links { justify-content: center; }
+
+      .profile-img-placeholder { width: 210px; height: 210px; }
+
+      .project-title { font-size: 1.25rem; padding-right: 0; }
+
       .featured-badge { position: static; margin-bottom: 1rem; display: inline-block; }
+
     }
+
   </style>
+
 </head>
+
 <body>
+
+
+
+  <!-- NAVBAR -->
+
   <nav class="navbar">
+
     <div class="nav-inner">
+
       <span class="logo">Akash Chauhan</span>
-      <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle dark/light mode">
+
+      <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle mode">
+
         <i class="fas fa-moon"></i> <span id="themeText">Dark</span>
+
       </button>
+
     </div>
+
   </nav>
 
+
+
   <main>
+
+
+
+    <!-- HERO -->
+
     <section class="hero">
+
       <div class="hero-blob-1"></div>
+
       <div class="hero-blob-2"></div>
+
+      <div class="hero-blob-3"></div>
+
       <div class="container hero-grid">
+
         <div class="hero-content animate-on-scroll">
-          <div class="hero-badge">📊 Data Analytics & Data Science Enthusiast</div>
+
+          <div class="hero-badge">Data Analytics & Data Science Enthusiast 📊</div>
+
           <h1>Turning Data into Insights with <em>Analytics & Machine Learning</em></h1>
+
           <div class="hero-highlight">
-            <span>Data Analytics</span><span>Power BI</span><span>SQL</span><span>Machine Learning</span>
+
+            <span>Data Analytics</span>
+
+            <span>Power BI</span>
+
+            <span>SQL</span>
+
+            <span>Machine Learning</span>
+
           </div>
-          <p class="hero-desc">Passionate about transforming raw data into meaningful insights through data analytics, visualization, and machine learning. I enjoy building end-to-end projects using Python, SQL, Power BI, and modern data science tools to solve real-world business problems.</p>
+
+          <p class="hero-desc">
+
+            Passionate about transforming raw data into meaningful insights through data analytics, visualization, and machine learning. 
+
+            I enjoy building end-to-end projects using Python, SQL, Power BI, and modern data science tools to solve real-world business problems.
+
+          </p>
+
           <a href="#contact" class="btn-resume">Connect with me <i class="fas fa-arrow-right"></i></a>
+
         </div>
+
         <div class="hero-image animate-on-scroll">
+
           <div class="profile-img-placeholder">
+
             <div class="profile-img-inner">
+
               <img src="image.png" alt="Akash Chauhan Profile" id="profileImage">
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+
+    <!-- ABOUT -->
 
     <section id="about">
+
       <div class="container">
+
         <h2 class="section-title animate-on-scroll"><span>About Me</span></h2>
-        <div class="animate-on-scroll"><p>I am a Data Analytics & Data Science enthusiast who enjoys extracting insights from data and building data-driven solutions. My interests include data analysis, business intelligence, machine learning, and NLP. I focus on creating practical projects that combine analytics, visualization, and predictive modeling to solve real-world problems.</p></div>
+
+        <div class="animate-on-scroll" style="max-width: 780px;">
+
+          <p>
+
+            I am a Data Analytics & Data Science enthusiast who enjoys extracting insights from data and building data-driven solutions. 
+
+            My interests include data analysis, business intelligence, machine learning, and NLP. I focus on creating practical projects that combine analytics, visualization, and predictive modeling to solve real-world problems.
+
+          </p>
+
+        </div>
+
       </div>
+
     </section>
+
+
+
+    <!-- SKILLS -->
 
     <section id="skills">
+
       <div class="container">
+
         <h2 class="section-title animate-on-scroll"><span>Skills & Technologies</span></h2>
+
         <div class="skills-grid">
-          <div class="skill-card animate-on-scroll"><h3><i class="fas fa-chart-pie"></i> Data Analytics</h3><div class="skill-list"><span class="skill-tag">Excel</span><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span><span class="skill-tag">Power Query</span><span class="skill-tag">DAX</span><span class="skill-tag">Data Cleaning</span><span class="skill-tag">Data Visualization</span><span class="skill-tag">EDA</span></div></div>
-          <div class="skill-card animate-on-scroll"><h3><i class="fab fa-python"></i> Programming</h3><div class="skill-list"><span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span></div></div>
-          <div class="skill-card animate-on-scroll"><h3><i class="fas fa-brain"></i> Data Science & ML</h3><div class="skill-list"><span class="skill-tag">Scikit-Learn</span><span class="skill-tag">Machine Learning</span><span class="skill-tag">Predictive Modeling</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">NLP</span></div></div>
-          <div class="skill-card animate-on-scroll"><h3><i class="fas fa-tools"></i> Tools & Development</h3><div class="skill-list"><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span><span class="skill-tag">Jupyter Notebook</span><span class="skill-tag">Flask</span></div></div>
+
+          <div class="skill-card animate-on-scroll">
+
+            <h3><i class="fas fa-chart-pie"></i> Data Analytics</h3>
+
+            <div class="skill-list">
+
+              <span class="skill-tag">Excel</span><span class="skill-tag">SQL</span><span class="skill-tag">Power BI</span>
+
+              <span class="skill-tag">Power Query</span><span class="skill-tag">DAX</span><span class="skill-tag">Data Cleaning</span>
+
+              <span class="skill-tag">Data Visualization</span><span class="skill-tag">EDA</span>
+
+            </div>
+
+          </div>
+
+          <div class="skill-card animate-on-scroll">
+
+            <h3><i class="fab fa-python"></i> Programming</h3>
+
+            <div class="skill-list">
+
+              <span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+
+              <span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span>
+
+            </div>
+
+          </div>
+
+          <div class="skill-card animate-on-scroll">
+
+            <h3><i class="fas fa-brain"></i> Data Science & ML</h3>
+
+            <div class="skill-list">
+
+              <span class="skill-tag">Scikit-Learn</span><span class="skill-tag">Machine Learning</span>
+
+              <span class="skill-tag">Predictive Modeling</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">NLP</span>
+
+            </div>
+
+          </div>
+
+          <div class="skill-card animate-on-scroll">
+
+            <h3><i class="fas fa-tools"></i> Tools & Development</h3>
+
+            <div class="skill-list">
+
+              <span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">VS Code</span>
+
+              <span class="skill-tag">Jupyter Notebook</span><span class="skill-tag">Flask</span>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+
+    <!-- PROJECTS -->
 
     <section id="projects">
+
       <div class="container">
+
         <h2 class="section-title animate-on-scroll"><span>Projects</span></h2>
+
         <div class="projects-container">
-          <!-- PROJECT 1 HR -->
+
+
+
+          <!-- PROJECT 1: HR Analytics -->
+
           <div class="project-card super-featured animate-on-scroll">
+
             <div class="featured-badge super-featured-badge"><i class="fas fa-chart-line"></i> FLAGSHIP DATA ANALYTICS & MACHINE LEARNING PROJECT 🚀</div>
-            <div class="project-title">📊 HR Analytics & Employee Attrition Prediction System</div>
+
+            <div class="project-title">
+
+              📊 HR Analytics & Employee Attrition Prediction System
+
+            </div>
+
             <div class="project-tech">SQL • Python • Pandas • NumPy • Matplotlib • Seaborn • Power BI • Machine Learning • Scikit-Learn • Random Forest • Streamlit</div>
-            <div class="project-desc"><strong>End-to-end Data Analytics and Machine Learning project</strong> focused on analyzing employee attrition patterns and predicting employee turnover. The project combines SQL data cleaning, exploratory data analysis, machine learning model development, Power BI dashboarding, and Streamlit deployment to help HR teams identify employees at risk of leaving.<br><br><strong>Key highlights:</strong> Employee Attrition Analysis • Department-wise Workforce Insights • Salary Impact Analysis • Satisfaction & Performance Analysis • Machine Learning Prediction System • Interactive Power BI Dashboard • Streamlit Web Application • Random Forest Precision: 87.77%, Recall: 92.23% • Attrition Driver Identification.<br><br><strong>Business Value:</strong> Demonstrates the complete Data Analytics workflow from raw HR data to predictive machine learning deployment, enabling proactive employee retention and data-driven HR decision making.</div>
-            <div class="feature-list"><span class="feature-chip"><i class="fas fa-users"></i> Attrition Analysis</span><span class="feature-chip"><i class="fas fa-chart-line"></i> Workforce Insights</span><span class="feature-chip"><i class="fas fa-brain"></i> Random Forest</span><span class="feature-chip"><i class="fas fa-chart-bar"></i> Power BI</span><span class="feature-chip"><i class="fas fa-tachometer-alt"></i> Streamlit</span><span class="feature-chip"><i class="fas fa-chart-pie"></i> HR Analytics</span><span class="feature-chip"><i class="fas fa-robot"></i> Prediction System</span></div>
-            <div class="project-links"><a href="https://github.com/AKASH-aAI/hr-analytics-attrition-prediction" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repository</a><a href="https://hr-analytics-attrition-prediction-tnnrlac6zvfrwtusmqklcp.streamlit.app/" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> 🚀 Live App</a></div>
+
+            <div class="project-desc">
+
+              <strong>End-to-end Data Analytics and Machine Learning project</strong> focused on analyzing employee attrition patterns and predicting employee turnover. The project combines SQL data cleaning, exploratory data analysis, machine learning model development, Power BI dashboarding, and Streamlit deployment to help HR teams identify employees at risk of leaving.<br><br>
+
+              <strong>Key highlights:</strong> Employee Attrition Analysis • Department-wise Workforce Insights • Salary Impact Analysis • Satisfaction & Performance Analysis • Machine Learning Prediction System • Interactive Power BI Dashboard • Streamlit Web Application • Random Forest Precision: 87.77%, Recall: 92.23% • Attrition Driver Identification.<br><br>
+
+              <strong>Business Value:</strong> Demonstrates the complete Data Analytics workflow from raw HR data to predictive machine learning deployment, enabling proactive employee retention and data-driven HR decision making.
+
+            </div>
+
+            <div class="feature-list">
+
+              <span class="feature-chip"><i class="fas fa-users"></i> Attrition Analysis</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-line"></i> Workforce Insights</span>
+
+              <span class="feature-chip"><i class="fas fa-brain"></i> Random Forest</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-bar"></i> Power BI</span>
+
+              <span class="feature-chip"><i class="fas fa-tachometer-alt"></i> Streamlit</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-pie"></i> HR Analytics</span>
+
+              <span class="feature-chip"><i class="fas fa-robot"></i> Prediction System</span>
+
+            </div>
+
+            <div class="project-links">
+
+              <a href="https://github.com/AKASH-aAI/hr-analytics-attrition-prediction" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repository</a>
+
+              <a href="https://hr-analytics-attrition-prediction-tnnrlac6zvfrwtusmqklcp.streamlit.app/" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> 🚀 Live App</a>
+
+            </div>
+
           </div>
-          <!-- PROJECT 2 Supply Chain -->
+
+
+
+          <!-- PROJECT 2: Supply Chain -->
+
           <div class="project-card featured animate-on-scroll">
+
             <div class="featured-badge"><i class="fas fa-truck"></i> FLAGSHIP DATA ANALYTICS PROJECT 🚀</div>
-            <div class="project-title">📦 Supply Chain Analytics & Performance Dashboard</div>
+
+            <div class="project-title">
+
+              📦 Supply Chain Analytics & Performance Dashboard
+
+            </div>
+
             <div class="project-tech">SQL • Python • Pandas • NumPy • Matplotlib • Seaborn • Excel • Power BI • Power Query • DAX</div>
-            <div class="project-desc"><strong>End-to-end Data Analytics project</strong> focused on analyzing supply chain operations, inventory management, warehouse performance, stockouts, backorders, demand forecasting, and revenue trends using SQL, Excel, Python, and Power BI.<br><br><strong>Key highlights:</strong> Warehouse Performance Analysis • Inventory Monitoring • Demand Forecast Analysis • Stockout Analysis • Backorder Analysis • Revenue Analysis • Product Category Performance • Interactive Power BI Dashboard • KPI Monitoring • Operational Bottleneck Identification.<br><br><strong>Business Value:</strong> Demonstrates a complete supply chain analytics workflow from data cleaning and validation to executive dashboard reporting, helping improve inventory planning, warehouse efficiency, and operational decision making.</div>
-            <div class="feature-list"><span class="feature-chip"><i class="fas fa-warehouse"></i> Warehouse Performance</span><span class="feature-chip"><i class="fas fa-chart-line"></i> Demand Forecasting</span><span class="feature-chip"><i class="fas fa-boxes"></i> Inventory Analytics</span><span class="feature-chip"><i class="fas fa-chart-bar"></i> Power BI</span><span class="feature-chip"><i class="fas fa-database"></i> SQL</span><span class="feature-chip"><i class="fas fa-calculator"></i> DAX</span><span class="feature-chip"><i class="fas fa-chart-pie"></i> Supply Chain</span></div>
-            <div class="project-links"><a href="https://github.com/AKASH-aAI/supply-chain-analytics" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repository</a></div>
+
+            <div class="project-desc">
+
+              <strong>End-to-end Data Analytics project</strong> focused on analyzing supply chain operations, inventory management, warehouse performance, stockouts, backorders, demand forecasting, and revenue trends using SQL, Excel, Python, and Power BI.<br><br>
+
+              <strong>Key highlights:</strong> Warehouse Performance Analysis • Inventory Monitoring • Demand Forecast Analysis • Stockout Analysis • Backorder Analysis • Revenue Analysis • Product Category Performance • Interactive Power BI Dashboard • KPI Monitoring • Operational Bottleneck Identification.<br><br>
+
+              <strong>Business Value:</strong> Demonstrates a complete supply chain analytics workflow from data cleaning and validation to executive dashboard reporting, helping improve inventory planning, warehouse efficiency, and operational decision making.
+
+            </div>
+
+            <div class="feature-list">
+
+              <span class="feature-chip"><i class="fas fa-warehouse"></i> Warehouse Performance</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-line"></i> Demand Forecasting</span>
+
+              <span class="feature-chip"><i class="fas fa-boxes"></i> Inventory Analytics</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-bar"></i> Power BI</span>
+
+              <span class="feature-chip"><i class="fas fa-database"></i> SQL</span>
+
+              <span class="feature-chip"><i class="fas fa-calculator"></i> DAX</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-pie"></i> Supply Chain</span>
+
+            </div>
+
+            <div class="project-links">
+
+              <a href="https://github.com/AKASH-aAI/supply-chain-analytics" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repository</a>
+
+            </div>
+
           </div>
-          <!-- PROJECT 3 E-Commerce -->
+
+
+
+          <!-- PROJECT 3: E-Commerce -->
+
           <div class="project-card super-featured animate-on-scroll">
+
             <div class="featured-badge super-featured-badge"><i class="fas fa-chart-line"></i> FLAGSHIP DATA ANALYTICS PROJECT 🚀</div>
-            <div class="project-title">🛒 E-Commerce Sales Analysis Dashboard</div>
+
+            <div class="project-title">
+
+              🛒 E-Commerce Sales Analysis Dashboard
+
+            </div>
+
             <div class="project-tech">SQL • Python • Pandas • NumPy • Matplotlib • Seaborn • Power BI • Power Query • DAX</div>
-            <div class="project-desc"><strong>End-to-end Data Analytics project</strong> focused on analyzing e-commerce sales data using SQL, Python, and Power BI. The project covers data cleaning, exploratory data analysis, business insight generation, and dashboard development.<br><br><strong>Key highlights:</strong> 83.47M total sales analyzed • 66K+ orders evaluated • Customer demographic analysis • Product category performance • Payment method analysis • Monthly sales trends • Interactive Power BI dashboard • KPI monitoring and business insights.<br><br><strong>Business Value:</strong> Demonstrates the complete Data Analytics workflow from raw data to executive dashboard reporting.</div>
-            <div class="feature-list"><span class="feature-chip"><i class="fas fa-database"></i> SQL</span><span class="feature-chip"><i class="fab fa-python"></i> Python</span><span class="feature-chip"><i class="fas fa-chart-bar"></i> Power BI</span><span class="feature-chip"><i class="fas fa-calculator"></i> DAX</span><span class="feature-chip"><i class="fas fa-chart-line"></i> EDA</span><span class="feature-chip"><i class="fas fa-tachometer-alt"></i> Dashboard</span><span class="feature-chip"><i class="fas fa-chart-pie"></i> Business Analytics</span></div>
-            <div class="project-links"><a href="https://github.com/AKASH-aAI/E-Commerce-Analysis" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub Repository</a></div>
+
+            <div class="project-desc">
+
+              <strong>End-to-end Data Analytics project</strong> focused on analyzing e-commerce sales data using SQL, Python, and Power BI. The project covers data cleaning, exploratory data analysis, business insight generation, and dashboard development.<br><br>
+
+              <strong>Key highlights:</strong> 83.47M total sales analyzed • 66K+ orders evaluated • Customer demographic analysis • Product category performance • Payment method analysis • Monthly sales trends • Interactive Power BI dashboard • KPI monitoring and business insights.<br><br>
+
+              <strong>Business Value:</strong> Demonstrates the complete Data Analytics workflow from raw data to executive dashboard reporting.
+
+            </div>
+
+            <div class="feature-list">
+
+              <span class="feature-chip"><i class="fas fa-database"></i> SQL</span>
+
+              <span class="feature-chip"><i class="fab fa-python"></i> Python</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-bar"></i> Power BI</span>
+
+              <span class="feature-chip"><i class="fas fa-calculator"></i> DAX</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-line"></i> EDA</span>
+
+              <span class="feature-chip"><i class="fas fa-tachometer-alt"></i> Dashboard</span>
+
+              <span class="feature-chip"><i class="fas fa-chart-pie"></i> Business Analytics</span>
+
+            </div>
+
+            <div class="project-links">
+
+              <a href="https://github.com/AKASH-aAI/E-Commerce-Analysis" target="_blank" class="github-link">
+
+                <i class="fab fa-github"></i> GitHub Repository
+
+              </a>
+
+            </div>
+
           </div>
-          <!-- PROJECT 4 AI Report -->
+
+
+
+          <!-- PROJECT 4: AI Data Report -->
+
           <div class="project-card featured animate-on-scroll">
+
             <div class="featured-badge"><i class="fas fa-robot"></i> Analytics Automation</div>
+
             <div class="project-title">📄 AI Data Report Generator</div>
+
             <div class="project-tech">Python · Flask · Pandas · NumPy · SciPy · ReportLab · Render</div>
-            <div class="project-desc"><strong>Problem Statement:</strong> Manual exploratory data analysis (EDA) and reporting consume hours of a data professional's time. This platform automates the entire pipeline.<br><br><strong>Project Overview:</strong> A full-stack Flask application that accepts CSV uploads, performs automated EDA, detects missing values, duplicates, and outliers, calculates a dataset health score, and generates a professional PDF report — all within seconds.<br><br><strong>Real-World Use Cases:</strong> Data Analysts performing rapid data quality audits, Data Scientists validating ML preprocessing steps, and teams requiring instant dataset documentation.</div>
-            <div class="feature-list"><span class="feature-chip"><i class="fas fa-upload"></i> CSV Upload</span><span class="feature-chip"><i class="fas fa-search"></i> Missing & Duplicate Detection</span><span class="feature-chip"><i class="fas fa-exclamation-triangle"></i> Outlier Analysis</span><span class="feature-chip"><i class="fas fa-heartbeat"></i> Health Score</span><span class="feature-chip"><i class="fas fa-file-pdf"></i> PDF Reporting</span></div>
-            <div class="project-links"><a href="https://ai-data-report-generator.onrender.com/" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/AKASH-aAI/ai-data-report-generator" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a><span class="password-badge"><i class="fas fa-lock"></i> Demo: AIREPORT2026</span></div>
+
+            <div class="project-desc">
+
+              <strong>Problem Statement:</strong> Manual exploratory data analysis (EDA) and reporting consume hours of a data professional's time. This platform automates the entire pipeline.<br><br>
+
+              <strong>Project Overview:</strong> A full-stack Flask application that accepts CSV uploads, performs automated EDA, detects missing values, duplicates, and outliers, calculates a dataset health score, and generates a professional PDF report — all within seconds.<br><br>
+
+              <strong>Real-World Use Cases:</strong> Data Analysts performing rapid data quality audits, Data Scientists validating ML preprocessing steps, and teams requiring instant dataset documentation.
+
+            </div>
+
+            <div class="feature-list">
+
+              <span class="feature-chip"><i class="fas fa-upload"></i> CSV Upload</span>
+
+              <span class="feature-chip"><i class="fas fa-search"></i> Missing & Duplicate Detection</span>
+
+              <span class="feature-chip"><i class="fas fa-exclamation-triangle"></i> Outlier Analysis</span>
+
+              <span class="feature-chip"><i class="fas fa-heartbeat"></i> Health Score</span>
+
+              <span class="feature-chip"><i class="fas fa-file-pdf"></i> PDF Reporting</span>
+
+            </div>
+
+            <div class="project-links">
+
+              <a href="https://ai-data-report-generator.onrender.com/" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+
+              <a href="https://github.com/AKASH-aAI/ai-data-report-generator" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+
+              <span class="password-badge"><i class="fas fa-lock"></i> Demo: AIREPORT2026</span>
+
+            </div>
+
           </div>
-          <!-- PROJECT 5 Gym -->
+
+
+
+          <!-- PROJECT 5: Gym -->
+
           <div class="project-card animate-on-scroll">
+
             <div class="project-title">🏋️ AI Gym Workout Recommender</div>
+
             <div class="project-tech">Flask · Scikit-learn · Random Forest · Pandas · Machine Learning</div>
-            <div class="project-desc"><strong>Problem Statement:</strong> Generic fitness plans ignore individual body metrics and goals, leading to suboptimal results. This system delivers personalized workout plans using machine learning.<br><br><strong>ML Workflow:</strong> Engineered a dataset linking BMI, fitness level, and goals to exercise routines. Trained a Random Forest Classifier to predict tailored workouts, integrated with interactive timers and exercise images via Flask.</div>
-            <div class="feature-list"><span class="feature-chip"><i class="fas fa-calculator"></i> BMI Calculation</span><span class="feature-chip"><i class="fas fa-bullseye"></i> Goal-based Plans</span><span class="feature-chip"><i class="fas fa-clock"></i> Workout Timers</span></div>
-            <div class="project-links"><a href="https://ai-powered-gym-trainer-2.onrender.com" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a><a href="https://github.com/AKASH-aAI/ai-powered-gym-trainer" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a></div>
+
+            <div class="project-desc">
+
+              <strong>Problem Statement:</strong> Generic fitness plans ignore individual body metrics and goals, leading to suboptimal results. This system delivers personalized workout plans using machine learning.<br><br>
+
+              <strong>ML Workflow:</strong> Engineered a dataset linking BMI, fitness level, and goals to exercise routines. Trained a Random Forest Classifier to predict tailored workouts, integrated with interactive timers and exercise images via Flask.
+
+            </div>
+
+            <div class="feature-list">
+
+              <span class="feature-chip"><i class="fas fa-calculator"></i> BMI Calculation</span>
+
+              <span class="feature-chip"><i class="fas fa-bullseye"></i> Goal-based Plans</span>
+
+              <span class="feature-chip"><i class="fas fa-clock"></i> Workout Timers</span>
+
+            </div>
+
+            <div class="project-links">
+
+              <a href="https://ai-powered-gym-trainer-2.onrender.com" target="_blank" class="live-demo-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+
+              <a href="https://github.com/AKASH-aAI/ai-powered-gym-trainer" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+
+            </div>
+
           </div>
-          <!-- PROJECT 6 Fraud -->
+
+
+
+          <!-- PROJECT 6: Fraud -->
+
           <div class="project-card animate-on-scroll">
+
             <div class="project-title">💳 Credit Card Fraud Detection</div>
+
             <div class="project-tech">Scikit-learn · SHAP · Imbalanced Learn · FinTech Analytics</div>
-            <div class="project-desc"><strong>Problem Statement:</strong> Financial fraud causes billions in losses annually. This system tackles highly imbalanced transaction data to identify fraudulent patterns with high precision.<br><br><strong>Key Achievements:</strong> Achieved <strong>90.90% Precision</strong> and <strong>81.63% Recall</strong> using ensemble models with SMOTE. Integrated SHAP for model explainability, enabling risk-based transaction analysis for business stakeholders.</div>
-            <div class="metrics-grid"><span class="metric-item">🎯 Recall: 81.63%</span><span class="metric-item">📌 Precision: 90.90%</span></div>
-            <div class="project-links"><a href="https://github.com/AKASH-aAI/credit-card-fraud-detection" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a></div>
+
+            <div class="project-desc">
+
+              <strong>Problem Statement:</strong> Financial fraud causes billions in losses annually. This system tackles highly imbalanced transaction data to identify fraudulent patterns with high precision.<br><br>
+
+              <strong>Key Achievements:</strong> Achieved <strong>90.90% Precision</strong> and <strong>81.63% Recall</strong> using ensemble models with SMOTE. Integrated SHAP for model explainability, enabling risk-based transaction analysis for business stakeholders.
+
+            </div>
+
+            <div class="metrics-grid">
+
+              <span class="metric-item">🎯 Recall: 81.63%</span>
+
+              <span class="metric-item">📌 Precision: 90.90%</span>
+
+            </div>
+
+            <div class="project-links">
+
+              <a href="https://github.com/AKASH-aAI/credit-card-fraud-detection" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+
+            </div>
+
           </div>
-          <!-- PROJECT 7 Food -->
+
+
+
+          <!-- PROJECT 7: Food Delivery -->
+
           <div class="project-card animate-on-scroll">
+
             <div class="project-title">🛵 Food Delivery Time Prediction</div>
+
             <div class="project-tech">Regression · XGBoost · Feature Engineering · Streamlit</div>
-            <div class="project-desc"><strong>Problem Statement:</strong> Inaccurate delivery ETAs hurt customer trust and operational efficiency. This predictive analytics solution models delivery time based on distance, traffic, and weather conditions.<br><br><strong>Business Impact:</strong> Extensive feature engineering and regression modeling yielded an <strong>R² Score above 0.85</strong>, providing logistics teams with a reliable tool to reduce delivery uncertainty.</div>
-            <div class="metrics-grid"><span class="metric-item">📈 R² Score: &gt; 0.85</span></div>
-            <div class="project-links"><a href="https://github.com/AKASH-aAI/food-delivery-ml" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a></div>
+
+            <div class="project-desc">
+
+              <strong>Problem Statement:</strong> Inaccurate delivery ETAs hurt customer trust and operational efficiency. This predictive analytics solution models delivery time based on distance, traffic, and weather conditions.<br><br>
+
+              <strong>Business Impact:</strong> Extensive feature engineering and regression modeling yielded an <strong>R² Score above 0.85</strong>, providing logistics teams with a reliable tool to reduce delivery uncertainty.
+
+            </div>
+
+            <div class="metrics-grid">
+
+              <span class="metric-item">📈 R² Score: &gt; 0.85</span>
+
+            </div>
+
+            <div class="project-links">
+
+              <a href="https://github.com/AKASH-aAI/food-delivery-ml" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+
+            </div>
+
           </div>
-          <!-- PROJECT 8 Emotion -->
+
+
+
+          <!-- PROJECT 8: Emotion -->
+
           <div class="project-card animate-on-scroll">
+
             <div class="project-title">😊 Emotion Detection (NLP)</div>
+
             <div class="project-tech">Transformers · DistilBERT · Hugging Face · Streamlit</div>
-            <div class="project-desc"><strong>Problem Statement:</strong> Understanding human emotion from text is crucial for customer feedback analysis. This advanced NLP application classifies emotions like joy, sadness, and anger in real-time.<br><br><strong>Technical Highlights:</strong> Fine-tuned a DistilBERT transformer on over <strong>12,000+ processed samples</strong> with data balancing. Deployed as an interactive Streamlit app for multi-class emotion detection.</div>
-            <div class="metrics-grid"><span class="metric-item">📊 12,000+ Samples</span><span class="metric-item">🧠 Transformer-based</span></div>
-            <div class="project-links"><a href="https://github.com/AKASH-aAI/emotion-detection-nlp" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a></div>
+
+            <div class="project-desc">
+
+              <strong>Problem Statement:</strong> Understanding human emotion from text is crucial for customer feedback analysis. This advanced NLP application classifies emotions like joy, sadness, and anger in real-time.<br><br>
+
+              <strong>Technical Highlights:</strong> Fine-tuned a DistilBERT transformer on over <strong>12,000+ processed samples</strong> with data balancing. Deployed as an interactive Streamlit app for multi-class emotion detection.
+
+            </div>
+
+            <div class="metrics-grid">
+
+              <span class="metric-item">📊 12,000+ Samples</span>
+
+              <span class="metric-item">🧠 Transformer-based</span>
+
+            </div>
+
+            <div class="project-links">
+
+              <a href="https://github.com/AKASH-aAI/emotion-detection-nlp" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+
+            </div>
+
           </div>
+
+
+
         </div>
-        <div class="animate-on-scroll" style="margin-top: 1.8rem; color: var(--text-3);"><i class="fas fa-code-branch"></i> More analytics & data science projects shipping soon — explore my GitHub.</div>
+
+        <div class="animate-on-scroll" style="margin-top: 1.5rem; color: var(--text-3); font-style: italic; font-size: 0.9rem;">
+
+          <i class="fas fa-code-branch"></i> More analytics & data science projects shipping soon — explore my GitHub.
+
+        </div>
+
       </div>
+
     </section>
+
+
+
+    <!-- CONTACT -->
 
     <section id="contact">
+
       <div class="container">
+
         <h2 class="section-title animate-on-scroll"><span>Let's Connect</span></h2>
+
         <div class="animate-on-scroll">
-          <p style="margin-bottom: 1.5rem; color: var(--text-2);">Open to analytics roles, data science collaborations, and insightful conversations.</p>
+
+          <p style="margin-bottom: 1.2rem; color: var(--text-2);">Open to analytics roles, data science collaborations, and insightful conversations.</p>
+
           <div class="contact-links">
+
             <a href="mailto:akashwork4413611@gmail.com" class="contact-card"><i class="fas fa-envelope"></i> akashwork4413611@gmail.com</a>
+
             <a href="https://www.linkedin.com/in/akash-chauhan-a79605397/" target="_blank" class="contact-card"><i class="fab fa-linkedin"></i> LinkedIn</a>
+
             <a href="https://github.com/AKASH-aAI" target="_blank" class="contact-card"><i class="fab fa-github"></i> GitHub</a>
+
             <a href="https://www.kaggle.com/akashchauhan4413611" target="_blank" class="contact-card"><i class="fab fa-kaggle"></i> Kaggle</a>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+
   </main>
 
+
+
   <footer>
+
     <div class="container">
+
       <p>© 2025 Akash Chauhan — Data Analytics & Data Science Enthusiast. Built with <i class="fas fa-heart"></i> using modern web tools.</p>
+
     </div>
+
   </footer>
 
+
+
   <script>
-    (function() {
-      const btn = document.getElementById('themeToggleBtn');
+
+    (function () {
+
+      const btn  = document.getElementById('themeToggleBtn');
+
       const body = document.body;
+
       const saved = localStorage.getItem('theme');
+
+
+
       function setTheme(isDark) {
+
         if (isDark) {
+
           body.classList.add('dark');
+
           btn.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>';
+
         } else {
+
           body.classList.remove('dark');
+
           btn.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>';
+
         }
+
       }
+
+
+
       setTheme(saved === 'dark');
+
+
+
       btn.addEventListener('click', () => {
+
         const isDark = body.classList.contains('dark');
+
         localStorage.setItem('theme', isDark ? 'light' : 'dark');
+
         setTheme(!isDark);
+
       });
+
+
 
       document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', function(e) {
+
+        a.addEventListener('click', function (e) {
+
           const id = this.getAttribute('href');
+
           if (!id || id === '#') return;
+
           const el = document.querySelector(id);
+
           if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+
         });
+
       });
 
+
+
       const io = new IntersectionObserver((entries) => {
+
         entries.forEach(entry => {
+
           if (entry.isIntersecting) {
+
             entry.target.classList.add('visible');
+
             io.unobserve(entry.target);
+
           }
+
         });
-      }, { threshold: 0.1 });
+
+      }, { threshold: 0.08 });
+
       document.querySelectorAll('.animate-on-scroll').forEach(el => io.observe(el));
 
+
+
       const img = document.getElementById('profileImage');
+
       if (img) {
+
         img.addEventListener('dblclick', () => {
+
           const url = prompt('Enter profile image URL:', img.src);
+
           if (url && url.trim()) img.src = url;
+
         });
+
         img.title = 'Double-click to change image';
+
       }
+
     })();
+
   </script>
+
 </body>
+
 </html>

@@ -1,1 +1,490 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Akash Chauhan · Data Analytics & Power BI Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* ===== EXACT THEME FROM INDEX ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal: #14B8A6; --teal-dark: #0D9488; --teal-soft: rgba(20,184,166,0.10); --teal-glow: 0 0 28px rgba(20,184,166,0.22);
+      --sky: #0EA5E9; --sky-soft: rgba(14,165,233,0.09);
+      --gold: #F59E0B; --gold-soft: rgba(245,158,11,0.12);
+      --bg: #F6FAFB; --surface: #FFFFFF; --surface-2: #EEF5F5;
+      --text-1: #0F172A; --text-2: #334155; --text-3: #64748B;
+      --border: #D9EAE8; --border-s: rgba(20,184,166,0.18);
+      --grad-main: linear-gradient(135deg, #14B8A6 0%, #0EA5E9 100%);
+      --grad-gold: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+      --grad-card: linear-gradient(145deg, #ffffff 0%, #F0FAFA 100%);
+      --shadow-xs: 0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+      --shadow-sm: 0 4px 12px rgba(15,23,42,0.07), 0 2px 4px rgba(15,23,42,0.04);
+      --shadow-md: 0 10px 28px rgba(15,23,42,0.08), 0 4px 8px rgba(15,23,42,0.04);
+      --shadow-lg: 0 20px 48px rgba(15,23,42,0.10), 0 8px 16px rgba(15,23,42,0.05);
+      --shadow-teal: 0 8px 24px rgba(20,184,166,0.25);
+      --r-xl: 2.2rem; --r-lg: 1.5rem; --r-md: 1rem; --r-sm: 0.6rem;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1); --t: all 0.3s var(--ease);
+    }
+    body.dark {
+      --bg: #071018; --surface: #0F1C2E; --surface-2: #0A1929;
+      --text-1: #F0F9FF; --text-2: #BAE6FD; --text-3: #7ECDE8;
+      --border: rgba(20,184,166,0.15); --border-s: rgba(20,184,166,0.25);
+      --grad-card: linear-gradient(145deg, #0F1C2E 0%, #091525 100%);
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
+      --shadow-md: 0 10px 28px rgba(0,0,0,0.4), 0 4px 8px rgba(0,0,0,0.25);
+      --shadow-lg: 0 20px 48px rgba(0,0,0,0.55), 0 8px 16px rgba(0,0,0,0.3);
+      --teal-soft: rgba(20,184,166,0.14); --sky-soft: rgba(14,165,233,0.12);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg); color: var(--text-1);
+      line-height: 1.6; font-weight: 400;
+      transition: background 0.35s, color 0.25s;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 1.5rem; }
+    body::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      opacity: 0.018;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+    }
+
+    /* ===== NAVBAR (IDENTICAL) ===== */
+    .navbar { position: sticky; top: 1rem; z-index: 200; padding: 0 1.5rem; }
+    .nav-inner {
+      max-width: 1000px; margin: 0 auto;
+      background: rgba(255,255,255,0.80); backdrop-filter: blur(20px) saturate(1.6);
+      -webkit-backdrop-filter: blur(20px) saturate(1.6);
+      border: 1px solid rgba(20,184,166,0.15); border-radius: 3rem;
+      padding: 0.75rem 1.6rem;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 4px 20px rgba(20,184,166,0.10), 0 1px 4px rgba(15,23,42,0.06);
+      transition: var(--t);
+    }
+    body.dark .nav-inner { background: rgba(7,16,24,0.80); border-color: rgba(20,184,166,0.20); }
+    .logo {
+      font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.45rem;
+      background: var(--grad-main); -webkit-background-clip: text; background-clip: text;
+      color: transparent; letter-spacing: -0.4px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; }
+    .nav-links a {
+      color: var(--text-2); text-decoration: none; font-weight: 600; font-size: 0.92rem;
+      transition: var(--t); border-bottom: 2px solid transparent; padding-bottom: 2px;
+    }
+    .nav-links a:hover { color: var(--teal); border-bottom-color: var(--teal); }
+    .theme-toggle {
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 2.5rem;
+      padding: 0.45rem 1.1rem; cursor: pointer; font-size: 0.88rem; font-weight: 600;
+      color: var(--text-2); display: flex; align-items: center; gap: 0.45rem;
+      transition: var(--t); font-family: 'Inter', sans-serif;
+    }
+    .theme-toggle:hover { background: var(--teal); color: #fff; border-color: var(--teal); box-shadow: var(--shadow-teal); transform: translateY(-1px); }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 5.5rem 0; position: relative; }
+    .section-title {
+      font-family: 'Poppins', sans-serif; font-size: 2rem; font-weight: 700;
+      margin-bottom: 3rem; letter-spacing: -0.03em; color: var(--text-1);
+      position: relative; display: inline-block;
+    }
+    .section-title span { background: var(--grad-main); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .section-title::after {
+      content: ''; position: absolute; bottom: -10px; left: 0;
+      width: 48px; height: 3px; background: var(--grad-main); border-radius: 3px;
+    }
+
+    /* ===== BUTTONS (match index) ===== */
+    .btn-primary, .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      padding: 0.82rem 2.1rem; border-radius: 3rem; font-weight: 700; font-size: 0.95rem;
+      text-decoration: none; border: none; cursor: pointer; transition: var(--t);
+    }
+    .btn-primary {
+      background: var(--grad-main); color: #fff; box-shadow: var(--shadow-teal);
+    }
+    .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 28px rgba(20,184,166,0.4); }
+    .btn-secondary {
+      background: var(--surface-2); color: var(--text-1); border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { background: var(--teal); color: #fff; border-color: var(--teal); transform: translateY(-3px); box-shadow: var(--shadow-teal); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 70vh; display: flex; align-items: center; padding: 4rem 0 3rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-blob-1, .hero-blob-2 {
+      position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+    }
+    .hero-blob-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(20,184,166,0.13) 0%, transparent 70%); top: -120px; right: -80px; }
+    .hero-blob-2 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(14,165,233,0.10) 0%, transparent 70%); bottom: -60px; left: -60px; }
+    .hero-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 3rem; position: relative; z-index: 2; width: 100%; }
+    .hero-content { flex: 1 1 420px; }
+    .hero-content h1 { font-family: 'Poppins', sans-serif; font-size: 3rem; font-weight: 800; line-height: 1.18; letter-spacing: -0.03em; color: var(--text-1); margin-bottom: 1rem; }
+    .hero-content h1 em { font-style: normal; background: var(--grad-main); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-desc { font-size: 1.05rem; color: var(--text-3); max-width: 520px; line-height: 1.7; margin: 1.2rem 0 1.8rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    /* ===== SERVICES CARDS ===== */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.6rem;
+    }
+    .service-card {
+      background: var(--grad-card); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 1.8rem 1.5rem;
+      box-shadow: var(--shadow-sm); transition: var(--t);
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--grad-main); opacity: 0; transition: opacity 0.3s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md), var(--teal-glow); border-color: var(--border-s); }
+    .service-card:hover::before { opacity: 1; }
+    .service-card i { font-size: 2.2rem; background: var(--grad-main); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.7rem; }
+    .service-card h3 { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--text-1); margin-bottom: 0.3rem; }
+    .service-card p { font-size: 0.9rem; color: var(--text-3); }
+
+    /* ===== WHY HIRE ===== */
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
+    .why-item { display: flex; align-items: center; gap: 0.7rem; background: var(--grad-card); border: 1px solid var(--border); padding: 0.8rem 1.2rem; border-radius: 2.5rem; box-shadow: var(--shadow-xs); transition: var(--t); }
+    .why-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--border-s); }
+    .why-item i { color: var(--teal); font-size: 1.1rem; }
+
+    /* ===== MODAL / GALLERY (fullscreen) ===== */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);
+      z-index: 999; display: none; align-items: center; justify-content: center;
+      padding: 2rem; animation: fadeIn 0.3s var(--ease);
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: var(--surface); border-radius: var(--r-xl); max-width: 1100px; width: 100%;
+      max-height: 90vh; overflow-y: auto; padding: 1.5rem 2rem 2rem;
+      box-shadow: var(--shadow-lg); position: relative;
+      border: 1px solid var(--border);
+    }
+    .modal-close {
+      position: sticky; top: 0; float: right; background: var(--surface-2);
+      border: 1px solid var(--border); border-radius: 3rem;
+      padding: 0.5rem 1.2rem; font-weight: 700; color: var(--text-1);
+      cursor: pointer; transition: var(--t); z-index: 10;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .modal-close:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+    .modal-gallery { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem; }
+    .modal-gallery img { width: 100%; border-radius: var(--r-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+    .gallery-nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
+    .gallery-nav button {
+      background: var(--surface-2); border: 1px solid var(--border); border-radius: 3rem;
+      padding: 0.5rem 1.8rem; font-weight: 600; color: var(--text-1);
+      cursor: pointer; transition: var(--t);
+    }
+    .gallery-nav button:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+    /* PDF list */
+    .pdf-list { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem; }
+    .pdf-item {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--grad-card); border: 1px solid var(--border);
+      padding: 0.8rem 1.5rem; border-radius: var(--r-md);
+      transition: var(--t); flex-wrap: wrap; gap: 0.5rem;
+    }
+    .pdf-item:hover { border-color: var(--border-s); box-shadow: var(--shadow-sm); }
+    .pdf-item span { font-weight: 500; color: var(--text-1); display: flex; align-items: center; gap: 0.5rem; }
+    .pdf-item span i { color: var(--teal); }
+    .pdf-actions { display: flex; gap: 0.6rem; }
+    .pdf-actions button {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 2rem; padding: 0.3rem 1.2rem;
+      font-weight: 600; font-size: 0.8rem; color: var(--text-1);
+      cursor: pointer; transition: var(--t);
+    }
+    .pdf-actions button:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+    /* ===== CTA ===== */
+    .cta-section { text-align: center; }
+    .cta-section .section-title::after { left: 50%; transform: translateX(-50%); }
+    .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem; margin-top: 1.5rem; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+    .animate-on-scroll { opacity: 0; transform: translateY(28px); transition: opacity 0.65s var(--ease), transform 0.65s var(--ease); }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero-grid { flex-direction: column; text-align: center; }
+      .hero-content h1 { font-size: 2.2rem; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .section-title::after { left: 50%; transform: translateX(-50%); }
+      .section-title { display: block; text-align: center; }
+      .hero-actions { justify-content: center; }
+      .nav-inner { flex-wrap: wrap; gap: 0.5rem; justify-content: center; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.8rem; }
+      .modal-content { padding: 1rem; }
+    }
+
+    /* ===== UTILITY ===== */
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-1 { margin-bottom: 1rem; }
+    .flex-center { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR (exact copy from index) -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <span class="logo">Akash Chauhan</span>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="services.html" style="color: var(--teal); border-bottom-color: var(--teal);">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle mode">
+      <i class="fas fa-moon"></i> <span id="themeText">Dark</span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-blob-1"></div>
+    <div class="hero-blob-2"></div>
+    <div class="container hero-grid">
+      <div class="hero-content animate-on-scroll">
+        <h1>Professional Data Analytics & <em>Power BI Services</em></h1>
+        <p class="hero-desc">
+          Helping businesses transform raw data into meaningful insights through Data Analytics, SQL, Python, Excel and Power BI.
+        </p>
+        <div class="hero-actions">
+          <a href="https://www.fiverr.com/s/YR3kbEz" target="_blank" class="btn-primary"><i class="fas fa-briefcase"></i> Hire Me on Fiverr</a>
+          <a href="https://www.fiverr.com/akash4413611" target="_blank" class="btn-secondary"><i class="fas fa-user"></i> Visit Fiverr Profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT I PROVIDE ===== -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll"><span>What I Provide</span></h2>
+      <div class="services-grid">
+        <div class="service-card animate-on-scroll"><i class="fas fa-chart-pie"></i><h3>Interactive Power BI Dashboards</h3><p>Dynamic, filterable dashboards with DAX and Power Query</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-broom"></i><h3>Data Cleaning & Processing</h3><p>Raw to ready: handle missing values, outliers, and formatting</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-search"></i><h3>Exploratory Data Analysis (EDA)</h3><p>Deep-dive into patterns, distributions, and correlations</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-database"></i><h3>SQL Data Analysis</h3><p>Complex queries, joins, window functions, and performance tuning</p></div>
+        <div class="service-card animate-on-scroll"><i class="fab fa-python"></i><h3>Python Data Analysis</h3><p>Pandas, NumPy, Matplotlib, Seaborn for advanced analytics</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-file-alt"></i><h3>Business Reports & Insights</h3><p>Actionable reports with clear recommendations</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-tachometer-alt"></i><h3>KPI Dashboard Development</h3><p>Track performance metrics that matter to your business</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-table"></i><h3>Excel Dashboard & Reporting</h3><p>Advanced Excel with pivot tables, charts, and automation</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-chart-bar"></i><h3>Data Visualization</h3><p>Clear, compelling visuals tailored to your audience</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-project-diagram"></i><h3>End-to-End Analytics Projects</h3><p>From data extraction to deployment and documentation</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SAMPLE DASHBOARDS (modal) ===== -->
+  <section id="dashboards">
+    <div class="container text-center">
+      <h2 class="section-title animate-on-scroll" style="display:inline-block;"><span>Sample Dashboards</span></h2>
+      <div class="animate-on-scroll" style="margin-top: 1.5rem;">
+        <button id="openDashboardModal" class="btn-primary"><i class="fas fa-images"></i> View Dashboard Samples</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SAMPLE REPORTS (modal) ===== -->
+  <section id="reports">
+    <div class="container text-center">
+      <h2 class="section-title animate-on-scroll" style="display:inline-block;"><span>Sample Reports</span></h2>
+      <div class="animate-on-scroll" style="margin-top: 1.5rem;">
+        <button id="openPdfModal" class="btn-primary"><i class="fas fa-file-pdf"></i> View PDF Reports</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY HIRE ME ===== -->
+  <section id="why-hire">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll"><span>Why Hire Me?</span></h2>
+      <div class="why-grid animate-on-scroll">
+        <div class="why-item"><i class="fas fa-check-circle"></i> Business-focused dashboards</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Clean and interactive visualizations</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> SQL, Python &amp; Power BI expertise</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Insightful business reporting</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Fast communication</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> On-time delivery</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Professional documentation</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Client satisfaction focused</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll" style="display:inline-block;"><span>Let's Build Your Dashboard</span></h2>
+      <div class="cta-actions animate-on-scroll">
+        <a href="https://www.fiverr.com/s/YR3kbEz" target="_blank" class="btn-primary"><i class="fas fa-briefcase"></i> Order on Fiverr</a>
+        <a href="https://www.fiverr.com/akash4413611" target="_blank" class="btn-secondary"><i class="fas fa-user"></i> Visit Fiverr Profile</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== MODAL: DASHBOARD GALLERY ===== -->
+<div class="modal-overlay" id="dashboardModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closeDashboardModal"><i class="fas fa-times"></i> Close</button>
+    <h3 style="font-family: 'Poppins', sans-serif; margin-bottom: 1rem; color: var(--text-1);">📊 Dashboard Samples</h3>
+    <div class="modal-gallery" id="dashboardGallery">
+      <img src="assets/dashboards/HR-analytics-dashboard.png" alt="HR Analytics Dashboard" />
+      <img src="assets/dashboards/Supply-chain-dashboard.png" alt="Supply Chain Dashboard" />
+    </div>
+    <div class="gallery-nav">
+      <button id="prevDashBtn"><i class="fas fa-chevron-left"></i> Previous</button>
+      <button id="nextDashBtn">Next <i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL: PDF LIST ===== -->
+<div class="modal-overlay" id="pdfModal">
+  <div class="modal-content">
+    <button class="modal-close" id="closePdfModal"><i class="fas fa-times"></i> Close</button>
+    <h3 style="font-family: 'Poppins', sans-serif; margin-bottom: 1rem; color: var(--text-1);">📄 PDF Reports</h3>
+    <div class="pdf-list" id="pdfList">
+      <!-- JS will inject -->
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer style="border-top:1px solid var(--border); padding:2.2rem 0; text-align:center; color:var(--text-3); font-size:0.84rem; margin-top: 2rem;">
+  <div class="container">
+    <p>© 2025 Akash Chauhan — Data Analytics &amp; Data Science Enthusiast. Built with <i class="fas fa-heart" style="color:var(--teal);"></i> using modern web tools.</p>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // ===== THEME TOGGLE =====
+    const btn = document.getElementById('themeToggleBtn');
+    const body = document.body;
+    const saved = localStorage.getItem('theme');
+    function setTheme(isDark) {
+      if (isDark) { body.classList.add('dark'); btn.innerHTML = '<i class="fas fa-sun"></i> <span id="themeText">Light</span>'; }
+      else { body.classList.remove('dark'); btn.innerHTML = '<i class="fas fa-moon"></i> <span id="themeText">Dark</span>'; }
+    }
+    setTheme(saved === 'dark');
+    btn.addEventListener('click', () => {
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      setTheme(!isDark);
+    });
+
+    // ===== SCROLL ANIMATIONS =====
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => io.observe(el));
+
+    // ===== DASHBOARD MODAL =====
+    const dashModal = document.getElementById('dashboardModal');
+    const openDash = document.getElementById('openDashboardModal');
+    const closeDash = document.getElementById('closeDashboardModal');
+    const prevDash = document.getElementById('prevDashBtn');
+    const nextDash = document.getElementById('nextDashBtn');
+    const gallery = document.getElementById('dashboardGallery');
+    const dashImages = gallery.querySelectorAll('img');
+    let dashIndex = 0;
+
+    function showDash(index) {
+      dashImages.forEach((img, i) => { img.style.display = i === index ? 'block' : 'none'; });
+    }
+    showDash(0);
+
+    openDash.addEventListener('click', () => { dashModal.classList.add('active'); });
+    closeDash.addEventListener('click', () => { dashModal.classList.remove('active'); });
+    dashModal.addEventListener('click', (e) => { if (e.target === dashModal) dashModal.classList.remove('active'); });
+    prevDash.addEventListener('click', () => { dashIndex = (dashIndex - 1 + dashImages.length) % dashImages.length; showDash(dashIndex); });
+    nextDash.addEventListener('click', () => { dashIndex = (dashIndex + 1) % dashImages.length; showDash(dashIndex); });
+
+    // ===== PDF MODAL =====
+    const pdfModal = document.getElementById('pdfModal');
+    const openPdf = document.getElementById('openPdfModal');
+    const closePdf = document.getElementById('closePdfModal');
+    const pdfList = document.getElementById('pdfList');
+
+    const pdfFiles = [
+      { name: 'Sales Performance Report', file: 'Sales-Performance-Report.pdf' },
+      { name: 'Customer Segmentation Analysis', file: 'Customer-Segmentation-Analysis.pdf' },
+      { name: 'Inventory Optimization Report', file: 'Inventory-Optimization-Report.pdf' },
+      { name: 'Financial Dashboard Summary', file: 'Financial-Dashboard-Summary.pdf' }
+    ];
+
+    function renderPdfList() {
+      pdfList.innerHTML = '';
+      pdfFiles.forEach(pdf => {
+        const div = document.createElement('div');
+        div.className = 'pdf-item';
+        div.innerHTML = `
+          <span><i class="fas fa-file-pdf"></i> ${pdf.name}</span>
+          <div class="pdf-actions">
+            <button class="preview-pdf" data-file="${pdf.file}"><i class="fas fa-eye"></i> Preview</button>
+            <button class="open-pdf" data-file="${pdf.file}"><i class="fas fa-external-link-alt"></i> Open</button>
+          </div>
+        `;
+        pdfList.appendChild(div);
+      });
+      // attach events
+      pdfList.querySelectorAll('.preview-pdf').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const file = e.currentTarget.dataset.file;
+          window.open(`assets/pdf/${file}`, '_blank');
+        });
+      });
+      pdfList.querySelectorAll('.open-pdf').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const file = e.currentTarget.dataset.file;
+          window.open(`assets/pdf/${file}`, '_blank');
+        });
+      });
+    }
+    renderPdfList();
+
+    openPdf.addEventListener('click', () => { pdfModal.classList.add('active'); });
+    closePdf.addEventListener('click', () => { pdfModal.classList.remove('active'); });
+    pdfModal.addEventListener('click', (e) => { if (e.target === pdfModal) pdfModal.classList.remove('active'); });
+
+    // close with ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        dashModal.classList.remove('active');
+        pdfModal.classList.remove('active');
+      }
+    });
+
+  })();
+</script>
+
+</body>
+</html>

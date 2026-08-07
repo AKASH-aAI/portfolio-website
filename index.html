@@ -713,6 +713,118 @@
 
 
 
+    /* ─── BUTTONS ─── */
+
+    .btn-primary {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.55rem;
+
+      background: var(--grad-main);
+
+      color: #fff;
+
+      padding: 0.82rem 2.1rem;
+
+      border-radius: 3rem;
+
+      font-weight: 700;
+
+      font-size: 0.95rem;
+
+      text-decoration: none;
+
+      border: none;
+
+      cursor: pointer;
+
+      transition: var(--t);
+
+      box-shadow: var(--shadow-teal);
+
+    }
+
+    .btn-primary:hover {
+
+      transform: translateY(-3px) scale(1.02);
+
+      box-shadow: 0 12px 28px rgba(20,184,166,0.4);
+
+    }
+
+    .btn-primary i { transition: transform 0.3s var(--ease); }
+
+    .btn-primary:hover i { transform: translateX(4px); }
+
+
+
+    .btn-secondary {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 0.55rem;
+
+      background: var(--surface-2);
+
+      color: var(--text-1);
+
+      padding: 0.82rem 2.1rem;
+
+      border-radius: 3rem;
+
+      font-weight: 700;
+
+      font-size: 0.95rem;
+
+      text-decoration: none;
+
+      border: 1px solid var(--border);
+
+      cursor: pointer;
+
+      transition: var(--t);
+
+    }
+
+    .btn-secondary:hover {
+
+      background: var(--teal);
+
+      color: #fff;
+
+      border-color: var(--teal);
+
+      transform: translateY(-3px);
+
+      box-shadow: var(--shadow-teal);
+
+    }
+
+    .btn-secondary i { transition: transform 0.3s var(--ease); }
+
+    .btn-secondary:hover i { transform: translateX(4px); }
+
+
+
+    .hero-actions {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 1rem;
+
+      align-items: center;
+
+    }
+
+
+
     /* ─── ABOUT ─── */
 
     #about p {
@@ -1307,54 +1419,6 @@
 
 
 
-    /* ─── CTA BUTTON (hero) ─── */
-
-    .btn-resume {
-
-      display: inline-flex;
-
-      align-items: center;
-
-      gap: 0.55rem;
-
-      background: var(--grad-main);
-
-      color: #fff;
-
-      padding: 0.82rem 2.1rem;
-
-      border-radius: 3rem;
-
-      font-weight: 700;
-
-      font-size: 0.95rem;
-
-      text-decoration: none;
-
-      border: none;
-
-      cursor: pointer;
-
-      transition: var(--t);
-
-      box-shadow: var(--shadow-teal);
-
-    }
-
-    .btn-resume:hover {
-
-      transform: translateY(-3px) scale(1.02);
-
-      box-shadow: 0 12px 28px rgba(20,184,166,0.4);
-
-    }
-
-    .btn-resume i { transition: transform 0.3s var(--ease); }
-
-    .btn-resume:hover i { transform: translateX(4px); }
-
-
-
     /* ─── CONTACT ─── */
 
     .contact-links {
@@ -1473,6 +1537,8 @@
 
       .hero-desc { margin-left: auto; margin-right: auto; }
 
+      .hero-actions { justify-content: center; }
+
       .section-title::after { left: 50%; transform: translateX(-50%); }
 
       .section-title { display: block; text-align: center; }
@@ -1577,7 +1643,13 @@
 
           </p>
 
-          <a href="#contact" class="btn-resume">Connect with me <i class="fas fa-arrow-right"></i></a>
+          <div class="hero-actions">
+
+            <a href="#contact" class="btn-primary">Connect with me <i class="fas fa-arrow-right"></i></a>
+
+            <a href="services.html" class="btn-secondary">See My Services <i class="fas fa-arrow-right"></i></a>
+
+          </div>
 
         </div>
 

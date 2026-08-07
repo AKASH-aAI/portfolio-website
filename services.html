@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Akash Chauhan · Data Analytics & Power BI Services</title>
+  <title>Akash Chauhan · Data Analytics, Data Science & Power BI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
@@ -159,6 +158,44 @@
     .why-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--border-s); }
     .why-item i { color: var(--teal); font-size: 1.1rem; }
 
+    /* ===== SAMPLE ROW (3 cards) ===== */
+    .sample-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+      margin-top: 1.5rem;
+    }
+    .sample-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--t);
+    }
+    .sample-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md), var(--teal-glow);
+      border-color: var(--border-s);
+    }
+    .sample-card h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 0.5rem;
+    }
+    .sample-card p {
+      color: var(--text-3);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .sample-card .btn-primary {
+      font-size: 0.9rem;
+      padding: 0.7rem 1.8rem;
+    }
+
     /* ===== MODAL / GALLERY (fullscreen) ===== */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);
@@ -221,6 +258,11 @@
     .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
     /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .sample-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
     @media (max-width: 768px) {
       .hero-grid { flex-direction: column; text-align: center; }
       .hero-content h1 { font-size: 2.2rem; }
@@ -232,6 +274,10 @@
       .nav-links { gap: 1rem; }
       .nav-links a { font-size: 0.8rem; }
       .modal-content { padding: 1rem; }
+      .sample-row {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
     }
 
     /* ===== UTILITY ===== */
@@ -269,9 +315,9 @@
     <div class="hero-blob-2"></div>
     <div class="container hero-grid">
       <div class="hero-content animate-on-scroll">
-        <h1>Professional Data Analytics & <em>Power BI Services</em></h1>
+        <h1>Professional Data Analytics, <em>Data Science & Machine Learning Solutions</em></h1>
         <p class="hero-desc">
-          Helping businesses transform raw data into meaningful insights through Data Analytics, SQL, Python, Excel and Power BI.
+          Transforming raw data into business intelligence with advanced analytics, predictive modeling, and interactive Power BI dashboards.
         </p>
         <div class="hero-actions">
           <a href="https://www.fiverr.com/s/YR3kbEz" target="_blank" class="btn-primary"><i class="fas fa-briefcase"></i> Hire Me on Fiverr</a>
@@ -291,7 +337,8 @@
         <div class="service-card animate-on-scroll"><i class="fas fa-search"></i><h3>Exploratory Data Analysis (EDA)</h3><p>Deep-dive into patterns, distributions, and correlations</p></div>
         <div class="service-card animate-on-scroll"><i class="fas fa-database"></i><h3>SQL Data Analysis</h3><p>Complex queries, joins, window functions, and performance tuning</p></div>
         <div class="service-card animate-on-scroll"><i class="fab fa-python"></i><h3>Python Data Analysis</h3><p>Pandas, NumPy, Matplotlib, Seaborn for advanced analytics</p></div>
-        <div class="service-card animate-on-scroll"><i class="fas fa-file-alt"></i><h3>Business Reports & Insights</h3><p>Actionable reports with clear recommendations</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-brain"></i><h3>Data Science Solutions</h3><p>End-to-end data science solutions using Python for prediction, analysis and business decision making</p></div>
+        <div class="service-card animate-on-scroll"><i class="fas fa-robot"></i><h3>Machine Learning Development</h3><p>Build classification, regression and predictive ML models with clean deployment-ready workflows</p></div>
         <div class="service-card animate-on-scroll"><i class="fas fa-tachometer-alt"></i><h3>KPI Dashboard Development</h3><p>Track performance metrics that matter to your business</p></div>
         <div class="service-card animate-on-scroll"><i class="fas fa-table"></i><h3>Excel Dashboard & Reporting</h3><p>Advanced Excel with pivot tables, charts, and automation</p></div>
         <div class="service-card animate-on-scroll"><i class="fas fa-chart-bar"></i><h3>Data Visualization</h3><p>Clear, compelling visuals tailored to your audience</p></div>
@@ -300,47 +347,57 @@
     </div>
   </section>
 
-  <!-- ===== SAMPLE DASHBOARDS (modal) ===== -->
-  <section id="dashboards">
-    <div class="container text-center">
-      <h2 class="section-title animate-on-scroll" style="display:inline-block;"><span>Sample Dashboards</span></h2>
-      <div class="animate-on-scroll" style="margin-top: 1.5rem;">
-        <button id="openDashboardModal" class="btn-primary"><i class="fas fa-images"></i> View Dashboard Samples</button>
+  <!-- ===== SAMPLE ROW (3 cards side-by-side) ===== -->
+  <section id="samples">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll" style="display:inline-block;"><span>Sample Work</span></h2>
+      <div class="sample-row">
+        <!-- Card 1: Dashboards -->
+        <div class="sample-card animate-on-scroll">
+          <i class="fas fa-chart-pie" style="font-size: 2.5rem; background: var(--grad-main); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.5rem;"></i>
+          <h3>Sample Dashboards</h3>
+          <p>Interactive Power BI dashboards with real business metrics.</p>
+          <button id="openDashboardModal" class="btn-primary"><i class="fas fa-images"></i> View Dashboard Samples</button>
+        </div>
+        <!-- Card 2: Reports -->
+        <div class="sample-card animate-on-scroll">
+          <i class="fas fa-file-alt" style="font-size: 2.5rem; background: var(--grad-main); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.5rem;"></i>
+          <h3>Sample Reports</h3>
+          <p>Professional PDF reports with insights and recommendations.</p>
+          <button id="openPdfModal" class="btn-primary"><i class="fas fa-file-pdf"></i> View PDF Reports</button>
+        </div>
+        <!-- Card 3: ML Models -->
+        <div class="sample-card animate-on-scroll">
+          <i class="fas fa-robot" style="font-size: 2.5rem; background: var(--grad-main); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 0.5rem;"></i>
+          <h3>Sample Machine Learning Models</h3>
+          <p>Classification, regression & predictive models deployed.</p>
+          <a href="ml-services.html" class="btn-primary"><i class="fas fa-brain"></i> View ML Models</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== SAMPLE REPORTS (modal) ===== -->
-  <section id="reports">
-    <div class="container text-center">
-      <h2 class="section-title animate-on-scroll" style="display:inline-block;"><span>Sample Reports</span></h2>
-      <div class="animate-on-scroll" style="margin-top: 1.5rem;">
-        <button id="openPdfModal" class="btn-primary"><i class="fas fa-file-pdf"></i> View PDF Reports</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== WHY HIRE ME ===== -->
+  <!-- ===== WHY HIRE ME (reduced, stronger) ===== -->
   <section id="why-hire">
     <div class="container">
       <h2 class="section-title animate-on-scroll"><span>Why Hire Me?</span></h2>
       <div class="why-grid animate-on-scroll">
-        <div class="why-item"><i class="fas fa-check-circle"></i> Business-focused dashboards</div>
-        <div class="why-item"><i class="fas fa-check-circle"></i> Clean and interactive visualizations</div>
-        <div class="why-item"><i class="fas fa-check-circle"></i> SQL, Python &amp; Power BI expertise</div>
-        <div class="why-item"><i class="fas fa-check-circle"></i> Insightful business reporting</div>
-        <div class="why-item"><i class="fas fa-check-circle"></i> Fast communication</div>
-        <div class="why-item"><i class="fas fa-check-circle"></i> On-time delivery</div>
-        <div class="why-item"><i class="fas fa-check-circle"></i> Professional documentation</div>
-        <div class="why-item"><i class="fas fa-check-circle"></i> Client satisfaction focused</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Data Analytics Expertise</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Data Science Solutions</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Machine Learning Development</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Power BI Dashboards</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> SQL &amp; Python Expertise</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Clean Documentation</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> Fast Communication</div>
+        <div class="why-item"><i class="fas fa-check-circle"></i> On-time Delivery</div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FINAL CTA ===== -->
+  <!-- ===== FINAL CTA (broader) ===== -->
   <section class="cta-section">
     <div class="container">
-      <h2 class="section-title animate-on-scroll" style="display:inline-block;"><span>Let's Build Your Dashboard</span></h2>
+      <h2 class="section-title animate-on-scroll" style="display:inline-block;"><span>Ready to Transform Your Data?</span></h2>
       <div class="cta-actions animate-on-scroll">
         <a href="https://www.fiverr.com/s/YR3kbEz" target="_blank" class="btn-primary"><i class="fas fa-briefcase"></i> Order on Fiverr</a>
         <a href="https://www.fiverr.com/akash4413611" target="_blank" class="btn-secondary"><i class="fas fa-user"></i> Visit Fiverr Profile</a>
@@ -380,7 +437,7 @@
 <!-- ===== FOOTER ===== -->
 <footer style="border-top:1px solid var(--border); padding:2.2rem 0; text-align:center; color:var(--text-3); font-size:0.84rem; margin-top: 2rem;">
   <div class="container">
-    <p>© 2025 Akash Chauhan — Data Analytics &amp; Data Science Enthusiast. Built with <i class="fas fa-heart" style="color:var(--teal);"></i> using modern web tools.</p>
+    <p>© 2025 Akash Chauhan — Data Analytics, Data Science &amp; Machine Learning. Built with <i class="fas fa-heart" style="color:var(--teal);"></i> using modern web tools.</p>
   </div>
 </footer>
 

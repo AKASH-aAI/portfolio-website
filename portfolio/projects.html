@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Akash Chauhan</title>
+  <meta name="description" content="All projects by Akash Chauhan — Data Analytics, Business Intelligence, Customer Analytics, Machine Learning, NLP, and AI applications.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand"><span class="navbar__brand-mark">AC</span>Akash Chauhan</a>
+      <nav class="navbar__links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="navbar__cta">
+        <a href="contact.html" class="btn btn--primary btn--sm">Contact</a>
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="breadcrumb"><a href="index.html">Home</a> / <span>Projects</span></div>
+      <h1>All Projects</h1>
+      <p> Every project below is real and linked to its source.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- FILTERS + SEARCH -->
+      <div class="filters-bar">
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input type="search" placeholder="Search by title, technology, or description…" data-project-search aria-label="Search projects">
+        </div>
+        <div class="filter-chips">
+          <button class="chip active" data-filter="all">All Projects</button>
+          <button class="chip" data-filter="data-analytics">Data Analytics</button>
+          <button class="chip" data-filter="business-intelligence">Business Intelligence</button>
+          <button class="chip" data-filter="customer-analytics">Customer Analytics</button>
+          <button class="chip" data-filter="machine-learning">Machine Learning</button>
+          <button class="chip" data-filter="nlp">NLP</button>
+          <button class="chip" data-filter="ai-applications">AI-Powered Apps</button>
+        </div>
+      </div>
+
+      <p class="results-count" data-results-count>Showing 10 projects</p>
+
+      <div class="project-grid">
+        <!-- Supply Chain -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Data Analytics, Business Intelligence"
+          data-search="Supply Chain Analytics Performance Dashboard SQL MySQL Python Pandas Excel Power BI inventory warehouse stockouts backorders revenue">
+          <div class="project-card__body">
+            <span class="badge badge--analytics">Data Analytics · BI</span>
+            <h3>Supply Chain Analytics & Performance Dashboard</h3>
+            <p>End-to-end supply chain analytics covering inventory, warehouse performance, stockouts, backorders, and revenue — SQL cleaning, Excel pivots, Python EDA, and Power BI.</p>
+            <div class="tech-list"><span>SQL</span><span>MySQL</span><span>Python</span><span>Pandas</span><span>Power BI</span></div>
+            <div class="card-actions">
+              <a href="projects/supply-chain-analytics.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://github.com/AKASH-aAI/supply-chain-analytics" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- RFM -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Data Analytics, Customer Analytics, Machine Learning"
+          data-search="E-Commerce Customer Analytics RFM Segmentation K-Means Python Power BI DAX cluster VIP champions loyal regular lost">
+          <div class="project-card__body">
+            <span class="badge badge--analytics">Customer Analytics</span>
+            <h3>E-Commerce Customer Analytics & RFM Segmentation</h3>
+            <p>500K+ transactions cleaned in Python and segmented using RFM scoring + K-Means into VIP Champions, High-Value Loyal, Regular, and Lost customers.</p>
+            <div class="tech-list"><span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>K-Means</span><span>Power BI</span></div>
+            <div class="card-actions">
+              <a href="projects/ecommerce-rfm-analysis.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://github.com/AKASH-aAI/ecommerce-rfm-analysis" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Funnel -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Data Analytics, Business Intelligence, Machine Learning"
+          data-search="E-commerce Conversion Funnel Analysis SQL Power BI Random Forest XGBoost Streamlit sessions dropoff revenue optimization">
+          <div class="project-card__body">
+            <span class="badge badge--analytics">Business Intelligence</span>
+            <h3>E-commerce Conversion Funnel Analysis</h3>
+            <p>120K session dataset analyzed across a 5-stage funnel with SQL analysis, two Power BI dashboard pages, and a Random Forest purchase-prediction Streamlit app.</p>
+            <div class="tech-list"><span>SQL</span><span>Power BI</span><span>Random Forest</span><span>XGBoost</span><span>Streamlit</span></div>
+            <div class="card-actions">
+              <a href="projects/conversion-funnel-analysis.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- HR Analytics -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Data Analytics, Machine Learning"
+          data-search="HR Analytics Employee Attrition Prediction SQL Python Power BI Scikit-learn Random Forest Logistic Regression Streamlit satisfaction tenure workload">
+          <div class="project-card__body">
+            <span class="badge badge--ml">HR Analytics · ML</span>
+            <h3>HR Analytics & Employee Attrition Prediction</h3>
+            <p>SQL-driven HR analysis, EDA, Power BI dashboard, and a Streamlit app comparing Logistic Regression against Random Forest with reported feature importance.</p>
+            <div class="tech-list"><span>Python</span><span>MySQL</span><span>Scikit-learn</span><span>Power BI</span><span>Streamlit</span></div>
+            <div class="card-actions">
+              <a href="projects/hr-analytics.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://hr-analytics-attrition-prediction-tnnrlac6zvfrwtusmqklcp.streamlit.app/" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AI Data Report -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Data Analytics, AI-Powered Applications"
+          data-search="AI Data Report Generator Flask Pandas ReportLab dataset profiling missing values duplicates outliers health score PDF report automation">
+          <div class="project-card__body">
+            <span class="badge badge--analytics">Data Automation</span>
+            <h3>AI Data Report Generator</h3>
+            <p>Flask app that accepts a CSV, profiles the dataset, detects missing values, duplicates and outliers, computes a health score, and generates a professional PDF report.</p>
+            <div class="tech-list"><span>Python</span><span>Flask</span><span>Pandas</span><span>SciPy</span><span>ReportLab</span></div>
+            <div class="card-actions">
+              <a href="projects/ai-data-report-generator.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://ai-data-report-generator.onrender.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AI Career Coach -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Machine Learning, AI-Powered Applications"
+          data-search="AI Career Coach Flask Scikit-learn Gemini API career prediction roadmap IT careers software engineer data analyst data scientist ML engineer NLP generative AI">
+          <div class="project-card__body">
+            <span class="badge badge--ml">ML + Generative AI</span>
+            <h3>AI Career Coach</h3>
+            <p>Career prediction app (10 IT career categories, ~90% reported accuracy) that generates a Gemini-powered personalized learning roadmap from user inputs.</p>
+            <div class="tech-list"><span>Scikit-learn</span><span>Flask</span><span>Gemini API</span><span>Render</span></div>
+            <div class="card-actions">
+              <a href="projects/ai-career-coach.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://ai-career-coach-95wd.onrender.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- AI Gym -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Machine Learning, AI-Powered Applications"
+          data-search="AI Gym Workout Recommender Random Forest Flask BMI fitness goal fat loss muscle gain timers joblib">
+          <div class="project-card__body">
+            <span class="badge badge--ml">ML Application</span>
+            <h3>AI Gym Workout Recommender</h3>
+            <p>Random Forest classifier recommends workouts based on age, BMI, fitness goal, and level — with built-in 60-second timers, pause/resume, and sound effects.</p>
+            <div class="tech-list"><span>Python</span><span>Scikit-learn</span><span>Joblib</span><span>Flask</span></div>
+            <div class="card-actions">
+              <a href="projects/ai-gym-workout-recommender.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://ai-powered-gym-trainer-2.onrender.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- E-Commerce Sales Dashboard -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Data Analytics, Business Intelligence"
+          data-search="E-Commerce Sales Analysis Dashboard SQL MySQL Python Power BI Power Query DAX sales orders customer demographics payment methods KPIs">
+          <div class="project-card__body">
+            <span class="badge badge--analytics">Data Analytics · BI</span>
+            <h3>E-Commerce Sales Analysis Dashboard</h3>
+            <p>End-to-end sales analytics project using SQL, Python, and Power BI. Reported totals include 83.47M sales and 66K+ orders, with demographic and payment analysis.</p>
+            <div class="tech-list"><span>SQL</span><span>MySQL</span><span>Python</span><span>Power BI</span><span>DAX</span></div>
+            <div class="card-actions">
+              <a href="projects/ecommerce-sales-dashboard.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://github.com/AKASH-aAI/E-Commerce-Analysis" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Credit Card Fraud -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Machine Learning"
+          data-search="Credit Card Fraud Detection Scikit-learn SMOTE SHAP imbalanced classification precision recall ensemble FinTech analytics">
+          <div class="project-card__body">
+            <span class="badge badge--ml">Machine Learning</span>
+            <h3>Credit Card Fraud Detection</h3>
+            <p>Classification project on highly imbalanced transactions. Reported Precision 90.90% and Recall 81.63%. Includes SMOTE balancing and SHAP explainability.</p>
+            <div class="tech-list"><span>Scikit-learn</span><span>SMOTE</span><span>SHAP</span><span>Ensemble</span></div>
+            <div class="card-actions">
+              <a href="projects/credit-card-fraud-detection.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://github.com/AKASH-aAI/credit-card-fraud-detection" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Food Delivery -->
+        <article class="project-card"
+          data-project-card
+          data-categories="Machine Learning"
+          data-search="Food Delivery Time Prediction Regression XGBoost feature engineering Streamlit distance traffic weather R2">
+          <div class="project-card__body">
+            <span class="badge badge--ml">Regression</span>
+            <h3>Food Delivery Time Prediction</h3>
+            <p>Regression-based project estimating delivery time from distance, traffic, and weather features, with a reported R² above 0.85 and a Streamlit app.</p>
+            <div class="tech-list"><span>Regression</span><span>XGBoost</span><span>Streamlit</span></div>
+            <div class="card-actions">
+              <a href="projects/food-delivery-time-prediction.html" class="btn btn--primary btn--sm">Case Study</a>
+              <a href="https://github.com/AKASH-aAI/food-delivery-ml" target="_blank" rel="noopener" class="btn btn--outline btn--sm">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="no-results" style="display:none;">
+        <h3>No projects match your search</h3>
+        <p>Try a different keyword or select a different category.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <h3>Akash Chauhan</h3>
+          <p>Data Analytics & Data Science portfolio — SQL, Python, Power BI, and practical machine learning projects.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com/AKASH-aAI" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/akash-chauhan-a79605397/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.kaggle.com/akashchauhan4413611" target="_blank" rel="noopener">Kaggle</a></li>
+            <li><a href="mailto:akashwork4413611@gmail.com">Email</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; <span class="year"></span> Akash Chauhan. All rights reserved.</span>
+        <span>Data Analytics & Data Science Portfolio</span>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav__inner">
+      <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8v9a2 2 0 01-2 2h-4v-6H9v6H5a2 2 0 01-2-2z"/></svg>Home</a>
+      <a href="about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</a>
+      <a href="skills.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16M6 16V8m6 8V4m6 12v-6"/></svg>Skills</a>
+      <a href="projects.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>Projects</a>
+      <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 6l8 6 8-6"/></svg>Contact</a>
+    </div>
+  </nav>
+
+  <button class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>

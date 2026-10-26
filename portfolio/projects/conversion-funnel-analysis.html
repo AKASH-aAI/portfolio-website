@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversion Funnel Analysis | Akash Chauhan</title>
+  <meta name="description" content="E-commerce conversion funnel analysis — 120K sessions, 5-stage funnel, SQL analysis, Power BI dashboards, and Random Forest purchase prediction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar__inner">
+      <a href="../index.html" class="navbar__brand"><span class="navbar__brand-mark">AC</span>Akash Chauhan</a>
+      <nav class="navbar__links"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../projects.html" class="active">Projects</a><a href="../contact.html">Contact</a></nav>
+      <div class="navbar__cta"><a href="../projects.html" class="btn btn--primary btn--sm">All Projects</a><button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+    </div>
+  </header>
+  <nav class="mobile-menu" id="mobile-menu"><a href="../index.html">Home</a><a href="../about.html">About</a><a href="../skills.html">Skills</a><a href="../projects.html" class="active">Projects</a><a href="../contact.html">Contact</a></nav>
+
+  <section class="project-hero">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / <span>Conversion Funnel Analysis</span></div>
+      <span class="badge badge--analytics">Data Analytics · Business Intelligence · Predictive Analytics</span>
+      <h1>E-commerce Conversion Funnel Analysis</h1>
+      <p class="lead">An end-to-end analytics project focused on understanding e-commerce conversion behavior, funnel drop-offs, revenue efficiency, and purchase likelihood.</p>
+      <div class="links-row">
+        <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis" target="_blank" rel="noopener" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.69-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.97 10.97 0 015.74 0c2.18-1.49 3.15-1.18 3.15-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/report/Ecommerce_Conversion_Funnel_Analysis_Project_Report.pdf" target="_blank" rel="noopener" class="btn btn--outline">Full Report</a>
+        <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/report/Ecommerce_Funnel_SQL_Analysis_Report.pdf" target="_blank" rel="noopener" class="btn btn--outline">SQL Analysis Report</a>
+        <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/sql/funnel_analysis.sql" target="_blank" rel="noopener" class="btn btn--outline">SQL Queries</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="case-study">
+
+      <section class="case-section">
+        <h2>Problem Statement</h2>
+        <p>E-commerce businesses lose revenue at multiple points of the customer journey — from initial visit to final purchase. Without clear funnel visibility, it's hard to identify where drop-offs happen, which channels and campaigns underperform, and how to prioritize revenue optimization efforts.</p>
+        <p>The dataset contains 120,000 sessions with 17 columns, covering July 2025 to December 2025 at session-level granularity.</p>
+      </section>
+
+      <section class="case-section">
+        <h2>Customer Journey — 5 Funnel Stages</h2>
+        <div class="workflow">
+          <span class="workflow-step">Website Visit</span><span class="workflow-arrow">→</span>
+          <span class="workflow-step">Product View</span><span class="workflow-arrow">→</span>
+          <span class="workflow-step">Add to Cart</span><span class="workflow-arrow">→</span>
+          <span class="workflow-step">Checkout</span><span class="workflow-arrow">→</span>
+          <span class="workflow-step">Purchase</span>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Business Objectives</h2>
+        <ul>
+          <li>Analyze conversion funnel stages and identify customer drop-offs</li>
+          <li>Compare channels, campaigns, devices, and user types</li>
+          <li>Analyze order value and realized revenue</li>
+          <li>Study revenue leakage and discount impact</li>
+          <li>Track purchase and conversion trends</li>
+          <li>Develop a purchase prediction model</li>
+          <li>Build Power BI dashboards</li>
+          <li>Develop a Streamlit prediction application</li>
+        </ul>
+      </section>
+
+      <section class="case-section">
+        <h2>Analytical & ML Workflow</h2>
+        <div class="workflow">
+          <span class="workflow-step">Python Cleaning</span><span class="workflow-arrow">→</span>
+          <span class="workflow-step">SQL Analysis</span><span class="workflow-arrow">→</span>
+          <span class="workflow-step">Power BI</span><span class="workflow-arrow">→</span>
+          <span class="workflow-step">Machine Learning</span><span class="workflow-arrow">→</span>
+          <span class="workflow-step">Streamlit</span>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Technologies Used</h2>
+        <div class="tech-list">
+          <span>Python</span><span>Pandas</span><span>NumPy</span><span>MySQL</span><span>SQL</span>
+          <span>Power BI</span><span>DAX</span><span>Scikit-learn</span><span>Random Forest</span>
+          <span>XGBoost</span><span>Streamlit</span><span>Joblib</span>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Machine Learning Details</h2>
+        <p>Models tested during development:</p>
+        <ul>
+          <li>Logistic Regression</li>
+          <li>Random Forest</li>
+          <li>XGBoost</li>
+        </ul>
+        <p>The final Streamlit application uses a <strong>Random Forest classifier with a 92% decision threshold</strong>.</p>
+        <p class="metric-note">Note: The live Streamlit application URL has not yet been deployed publicly. The GitHub repository and reports are linked below.</p>
+      </section>
+
+      <section class="case-section">
+        <h2>Dashboard Gallery</h2>
+        <div class="gallery">
+          <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/dashboard/Page_1_Executive_Overview.png" target="_blank" rel="noopener" class="gallery-item">
+            <div class="gallery-item__placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 14l4-4 4 4 5-5"/></svg>
+              <span>Page 1 — Executive Overview</span>
+            </div>
+          </a>
+          <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/dashboard/Page_2_Conversion_Revenue_Optimization.png" target="_blank" rel="noopener" class="gallery-item">
+            <div class="gallery-item__placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 4h18l-7 8v6l-4 2v-8L3 4z"/></svg>
+              <span>Page 2 — Conversion & Revenue Optimization</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Business Value</h2>
+        <p>Combines SQL-based funnel analysis, business intelligence dashboards, and a deployed prediction model to help stakeholders understand where customers drop off, why revenue leaks, and how to prioritize optimization. The Streamlit app supports what-if purchase likelihood prediction for new sessions.</p>
+        <p class="metric-note">Note: Stage-wise conversion percentages and revenue leakage amounts were not part of the verified brief and are not included here.</p>
+      </section>
+
+      <section class="case-section">
+        <h2>Project Resources</h2>
+        <div class="links-row">
+          <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis" target="_blank" rel="noopener" class="btn btn--primary">GitHub Repository</a>
+          <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/report/Ecommerce_Conversion_Funnel_Analysis_Project_Report.pdf" target="_blank" rel="noopener" class="btn btn--outline">Full Report</a>
+          <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/report/Ecommerce_Funnel_SQL_Analysis_Report.pdf" target="_blank" rel="noopener" class="btn btn--outline">SQL Analysis Report</a>
+          <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/sql/funnel_analysis.sql" target="_blank" rel="noopener" class="btn btn--outline">SQL Queries</a>
+          <a href="https://github.com/AKASH-aAI/Ecommerce-Conversion-Funnel-Analysis/blob/main/dashboard/E-commerce_Conversion_Funnel_Analysis.pbix" target="_blank" rel="noopener" class="btn btn--outline">Power BI File</a>
+        </div>
+      </section>
+
+      <div class="prev-next">
+        <a href="ecommerce-rfm-analysis.html">
+          <div class="label">← Previous</div>
+          <div class="title">E-Commerce Customer Analytics & RFM Segmentation</div>
+        </a>
+        <a href="hr-analytics.html" class="next">
+          <div class="label">Next Project →</div>
+          <div class="title">HR Analytics & Employee Attrition Prediction</div>
+        </a>
+      </div>
+
+      <div class="back-to-projects"><a href="../projects.html" class="btn btn--outline">← Return to All Projects</a></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><h3>Akash Chauhan</h3><p>Data Analytics & Data Science portfolio — SQL, Python, Power BI, and practical machine learning projects.</p></div>
+        <div class="footer__col"><h4>Navigation</h4><ul><li><a href="../index.html">Home</a></li><li><a href="../about.html">About</a></li><li><a href="../skills.html">Skills</a></li><li><a href="../projects.html">Projects</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+        <div class="footer__col"><h4>Connect</h4><ul><li><a href="https://github.com/AKASH-aAI" target="_blank" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/akash-chauhan-a79605397/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.kaggle.com/akashchauhan4413611" target="_blank" rel="noopener">Kaggle</a></li><li><a href="mailto:akashwork4413611@gmail.com">Email</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><span>&copy; <span class="year"></span> Akash Chauhan. All rights reserved.</span><span>Data Analytics & Data Science Portfolio</span></div>
+    </div>
+  </footer>
+
+  <nav class="mobile-bottom-nav"><div class="mobile-bottom-nav__inner">
+    <a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8v9a2 2 0 01-2 2h-4v-6H9v6H5a2 2 0 01-2-2z"/></svg>Home</a>
+    <a href="../about.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>About</a>
+    <a href="../skills.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16M6 16V8m6 8V4m6 12v-6"/></svg>Skills</a>
+    <a href="../projects.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>Projects</a>
+    <a href="../contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4z"/><path d="M4 6l8 6 8-6"/></svg>Contact</a>
+  </div></nav>
+
+  <button class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+  <script src="../assets/js/main.js"></script>
+  <script>document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>
